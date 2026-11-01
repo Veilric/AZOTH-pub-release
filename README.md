@@ -13,7 +13,7 @@ AZOTH is an independently branded fork of [Filee](https://github.com/KnifeLemon/
 
 Working with many file formats often means switching between separate conversion applications and repeating the same processing steps. Scattered output folders make results harder to track, and duplicate copies can waste storage. AZOTH brings conversion presets, reusable Donuts, duplicate review, and previewed organization into one local workflow, while keeping format-specific engine requirements visible.
 
-## What AZOTH does
+## Key features
 
 | Workflow | Purpose |
 | --- | --- |
@@ -33,6 +33,19 @@ Processing takes place locally. Optional engine downloads, browser-link imports,
 [Light appearance](docs/media/azoth-home-light.png) · [Dark appearance](docs/media/azoth-home-dark.png)
 
 The screenshots show AZOTH v0.1.1 in light and dark themes.
+
+## Technology stack
+
+| Area | Technologies |
+| --- | --- |
+| Application | C# and .NET 10; self-contained desktop packages. |
+| Interface | Avalonia UI 12.1.3, MVVM, CommunityToolkit.Mvvm, and Microsoft dependency injection. |
+| Conversion | Modular C# converters, Magick.NET, PDFsharp and other libraries; rhwp and 7-Zip are bundled, while tools such as LibreOffice, FFmpeg and Pandoc are optional engines. |
+| Platform integration | Windows Explorer integration, Linux desktop/X11 and desktop-specific Wayland integration, and macOS Finder integration source. |
+| Command line and installer | A .NET CLI and the Avalonia-based Windows installer share the application libraries. |
+| Build and packaging | .NET SDK/MSBuild, PowerShell 7 packaging scripts, Python helpers, Zig and MSIX tooling for Windows Explorer integration. |
+
+Dependency versions and license terms are recorded in [Directory.Packages.props](Directory.Packages.props), [the engine guide](docs/ENGINES.md), and [third-party notices](THIRD-PARTY-NOTICES.md).
 
 ## Run from source
 
