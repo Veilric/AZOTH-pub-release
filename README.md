@@ -7,8 +7,6 @@ AZOTH brings file conversion, reusable conversion shortcuts, duplicate review, a
 
 **AZOTH v0.1.1** is the initial public release of AZOTH — by Veilric, part of **The Alchemical Order**. [Download AZOTH v0.1.1](https://github.com/Veilric/AZOTH-pub-release/releases/tag/v0.1.1). Automatic updates remain disabled.
 
-AZOTH is an independently branded fork of [Filee](https://github.com/KnifeLemon/Filee), by Myeonggu Kim (KnifeLemon) and contributors. Upstream copyright, MIT licensing, and third-party notices remain intact. See [origin and licensing](#origin-and-licensing).
-
 ## Why AZOTH
 
 Working with many file formats often means switching between separate conversion applications and repeating the same processing steps. Scattered output folders make results harder to track, and duplicate copies can waste storage. AZOTH brings conversion presets, reusable Donuts, duplicate review, and previewed organization into one local workflow, while keeping format-specific engine requirements visible.
@@ -158,7 +156,7 @@ For the Linux archive, extract it into a chosen directory, read `INSTALL.txt`, a
 
 Linux builds using the pinned downloaded **rhwp** engine have a **glibc 2.39 / Ubuntu 24.04** compatibility floor for that engine. Ubuntu 22.04 compatibility is not claimed for those packages. An alternative engine build needs its own verification. X11 is the primary exercised desktop path. Wayland global drag/shortcut integration varies by compositor; GNOME and KDE have specific integration components. Native Wayland and macOS behavior require additional target-system verification. See [GNOME/Wayland notes](docs/GNOME-WAYLAND.md).
 
-AZOTH uses its own installation/settings identity and does not automatically import, remove, or overwrite a Filee installation. Existing explicit preset/profile import is available. Automatic update checks stay disabled in this release.
+AZOTH uses its own installation and settings directories. Existing explicit preset/profile import is available. Automatic update checks stay disabled in this release.
 
 ## Development, documentation, and reporting
 
@@ -169,13 +167,11 @@ AZOTH uses its own installation/settings identity and does not automatically imp
 - [Custom themes](docs/CUSTOM-THEMES.md), [adding converters](docs/ADDING-A-CONVERTER.md), and [adding a language](docs/ADDING-A-LANGUAGE.md)
 - [Brand assets](docs/BRANDING.md) and [changelog](CHANGELOG.md)
 
-Report issues at [Veilric/AZOTH-pub-release](https://github.com/Veilric/AZOTH-pub-release/issues). Include OS/desktop, application version, relevant engine versions, and reproduction steps when reporting a problem. Use disposable examples and remove private paths/content from logs. Do not send AZOTH-specific reports to Filee's maintainers.
+Report issues at [Veilric/AZOTH-pub-release](https://github.com/Veilric/AZOTH-pub-release/issues). Include OS/desktop, application version, relevant engine versions, and reproduction steps when reporting a problem. Use disposable examples and remove private paths/content from logs.
 
-## Origin and licensing
+## License
 
-AZOTH — by Veilric is maintained under **The Alchemical Order**. It derives from Filee by **Myeonggu Kim (KnifeLemon) and contributors**, starting at upstream commit `dfe6b6c3c455498540a35301de988b5760730e24`.
-
-The original [MIT license](LICENSE) and copyright are preserved. [NOTICE.md](NOTICE.md) records AZOTH provenance, and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) records dependency notices. Dependencies and optional engines retain their respective licenses. [Upstream release history](docs/upstream/CHANGELOG.md) is retained for reference. Historical release media and font names in test fixtures preserve test coverage and are not AZOTH product promotion.
+AZOTH — by Veilric, part of **The Alchemical Order**, is distributed under the [MIT license](LICENSE). See [NOTICE.md](NOTICE.md) and [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for copyright, attribution, and dependency license information.
 
 <!-- sponsors: src/AZOTH.App/Assets/Sponsors/sponsors.json -->
 
