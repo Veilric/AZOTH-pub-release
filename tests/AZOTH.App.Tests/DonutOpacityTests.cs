@@ -1,5 +1,5 @@
 // The donut's opacity: one setting, edited on the Theme page (with the preview following it at once, issue #276) and
-// on the Donut toolbar page, and read by the donut when it opens.
+// by the legacy toolbar editor, and read by the donut when it opens.
 
 using Avalonia.Controls;
 using Avalonia.Headless.XUnit;
@@ -26,13 +26,16 @@ public class DonutOpacityTests
         var store = AppHost.Get<UserDataStore>();
         var loc = AppHost.Get<ILocalizer>();
         var saved = store.Settings.Donut.Opacity;
+        MainWindow? window = null;
         try
         {
             store.Settings.Donut.Opacity = 0.96;
-            var vm = new MainWindowViewModel(AppHost.Services, loc, AppHost.Get<UpdateService>());
+            using var vm = new MainWindowViewModel(AppHost.Services, loc, AppHost.Get<UpdateService>());
             vm.Navigate("theme");
-            var window = new MainWindow { DataContext = vm, Width = 1080, Height = 820 };
+            window = new MainWindow { DataContext = vm, Width = 1080, Height = 820 };
             window.Show();
+            // Finish the launch stage before inspecting the main interface, including on the first test.
+            window.FindControl<StartupLogo>("LaunchLogo")!.RevealAt(1.4);
             RenderTests.Pump();
 
             var page = window.GetVisualDescendants().OfType<ThemePage>().Single();
@@ -50,8 +53,10 @@ public class DonutOpacityTests
             Assert.Equal(0.35, store.Settings.Donut.Opacity, 3);
             RenderTests.Save(window, $"page-theme-opacity-{language}.png");
 
-            // The Donut toolbar page shows and edits the same value, and the Theme page reads it back.
+            // The legacy toolbar editor shares this setting; the current toolbar route opens the builder.
             vm.Navigate("toolbar");
+            Assert.IsType<DonutBuilderPageViewModel>(vm.CurrentPage);
+            vm.CurrentPage = Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance<ToolbarPageViewModel>(AppHost.Services);
             RenderTests.Pump();
             var toolbar = Assert.IsType<ToolbarPageViewModel>(vm.CurrentPage);
             Assert.Equal(35, toolbar.SliceOpacity, 3);
@@ -71,6 +76,7 @@ public class DonutOpacityTests
         }
         finally
         {
+            window?.Close();
             store.Settings.Donut.Opacity = saved;
             store.SaveSettings();
         }

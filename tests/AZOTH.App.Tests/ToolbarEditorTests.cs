@@ -201,6 +201,7 @@ public class ToolbarPageTests
         var snapshot = store.Profiles.Select(p => p.Clone()).ToList();
         try
         {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
             using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
                 AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
 
@@ -249,6 +250,7 @@ public class ToolbarPageTests
         var profiles = store.Profiles.Select(p => p.Clone()).ToList();
         try
         {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
             using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
                 AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
 
@@ -309,6 +311,7 @@ public class ToolbarPageTests
         var profiles = store.Profiles.Select(p => p.Clone()).ToList();
         try
         {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
             using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
                 AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
             vm.SelectedProfile = vm.Profiles.Single(p => p.Profile.Id == "images");
@@ -329,8 +332,8 @@ public class ToolbarPageTests
 
             Assert.Equal("", vm.PaletteSearch);
             Assert.Equal(PaletteTab.Image, vm.SelectedTab!.Id);
-            // After "Edit" of the PDF donut, the one built-in group not on the images donut.
-            Assert.Equal(["pdf-edit", "test-new-group"], vm.VisiblePalette.Take(2).Select(c => c.PresetId));
+            // Existing catalog groups remain ahead of the new group, all above conversions.
+            Assert.Equal(["spreadsheet-formats", "pdf-edit", "test-new-group"], vm.VisiblePalette.Take(3).Select(c => c.PresetId));
             // Up with the groups at the top, above every conversion: not below ~80 presets.
             var chips = vm.VisiblePalette.Select(c => store.FindPreset(c.PresetId)!).ToList();
             var at = chips.FindIndex(p => p.Id == "test-new-group");
@@ -409,6 +412,7 @@ public class ToolbarPageTests
         var profiles = store.Profiles.Select(p => p.Clone()).ToList();
         try
         {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
             using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
                 AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
             vm.AddProfileCommand.Execute(null);
@@ -476,6 +480,7 @@ public class ToolbarPageTests
         Window? window = null;
         try
         {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
             using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
                 AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
             var page = new ToolbarPage { DataContext = vm };
@@ -532,18 +537,29 @@ public class ToolbarPageTests
     {
         TestServices.EnsureInitialized("en");
         var store = AppHost.Get<UserDataStore>();
-        using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
-            AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
-        vm.SelectedProfile = vm.Profiles.Single(p => p.Profile.Id == "mixed");
+        var profiles = store.Profiles.Select(p => p.Clone()).ToList();
+        try
+        {
+            if (store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
+            using var vm = new ToolbarPageViewModel(store, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<WindowService>(),
+                AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
+            vm.SelectedProfile = vm.Profiles.Single(p => p.Profile.Id == "mixed");
 
-        Assert.True(vm.IsMixed);
-        Assert.False(vm.CanChangeMixed);
-        Assert.False(vm.CanDelete);
-        vm.IsMixed = false;
+            Assert.True(vm.IsMixed);
+            Assert.False(vm.CanChangeMixed);
+            Assert.False(vm.CanDelete);
+            vm.IsMixed = false;
 
-        Assert.True(store.Profiles.Single(p => p.Id == "mixed").IsFallback);
-        Assert.True(vm.IsMixed);
-        Assert.NotNull(vm.MixedExtensions);
+            Assert.True(store.Profiles.Single(p => p.Id == "mixed").IsFallback);
+            Assert.True(vm.IsMixed);
+            Assert.NotNull(vm.MixedExtensions);
+        }
+        finally
+        {
+            store.Profiles.Clear();
+            store.Profiles.AddRange(profiles);
+            store.SaveLibrary();
+        }
     }
 }
 
@@ -1633,7 +1649,9 @@ public class ToolbarPaletteModelTests
     public void Resetting_a_built_in_donut_invalidates_only_that_profile()
     {
         using var f = new PresetAvailabilityTests.Fixture();
-        var images = f.Store.Profiles.Single(p => p.Id == "images");
+        var images = BuiltInData.CreatePrimaryProfiles().Single(p => p.Id == "images");
+        f.Store.Profiles.RemoveAll(p => p.Id == images.Id);
+        f.Store.Profiles.Add(images);
         images.Extensions = ["wav"];
         var b = Profile("reset-b", "png");
         b.IsFallback = true;

@@ -88,7 +88,10 @@ public class GroupEditorTests
         TestServices.EnsureInitialized("en");
         var store = AppHost.Get<UserDataStore>();
         var group = new Preset { Id = "test-delete-group", Name = "Gone", Kind = PresetKind.Group, SubPresetIds = ["to-png"] };
-        var images = store.Profiles.Single(p => p.Id == "images");
+        var profiles = store.Profiles.ToList();
+        var images = BuiltInData.CreatePrimaryProfiles().Single(p => p.Id == "images");
+        store.Profiles.Clear();
+        store.Profiles.Add(images);
         store.Presets.Add(group);
         images.PresetIds.Add(group.Id);
         try
@@ -106,6 +109,8 @@ public class GroupEditorTests
         {
             store.Presets.Remove(group);
             images.PresetIds.Remove(group.Id);
+            store.Profiles.Clear();
+            store.Profiles.AddRange(profiles);
         }
     }
 

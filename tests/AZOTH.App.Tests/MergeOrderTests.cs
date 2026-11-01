@@ -1,5 +1,5 @@
 // Merge order (issue #268): the real chooser opened from the donut, then the pages of the merged PDF; for "Merge images"
-// (#645) the layout below the list, the merged image and the choices remembered.
+// (#645) the layout below the list, the merged image and the isolated execution choices.
 
 using Avalonia;
 using Avalonia.Controls;
@@ -11,6 +11,7 @@ using AZOTH.App.Services;
 using AZOTH.App.ViewModels;
 using AZOTH.App.Views;
 using AZOTH.Core.Conversion;
+using AZOTH.Core.Donuts;
 using AZOTH.Core.Localization;
 using AZOTH.Core.Settings;
 using ImageMagick;
@@ -38,11 +39,7 @@ public class MergeOrderTests
     {
         TestServices.EnsureInitialized();
         var folder = Directory.CreateTempSubdirectory("azoth-merge-order-").FullName;
-        var store = AppHost.Get<UserDataStore>();
-        var profile = store.Profiles.Single(p => p.Id == "pdf");
-        var previous = profile.PresetIds;
-        var preset = store.FindPreset("merge-pdf")!;
-        var previousOutput = preset.Output;
+        var workspace = AppHost.Get<DonutWorkspace>();
         var conversions = AppHost.Get<ConversionService>();
         var before = conversions.Jobs.Select(j => j.Job.Id).ToHashSet();
         var radial = AppHost.Get<RadialController>();
@@ -62,8 +59,14 @@ public class MergeOrderTests
                 document.Save(path);
                 inputs.Add(path);
             }
-            profile.PresetIds = ["merge-pdf"];
-            preset.Output = new() { Location = AZOTH.Core.Presets.OutputLocation.CustomFolder, CustomFolder = folder };
+            workspace.ResetDraft();
+            var action = workspace.AddAction("merge-pdf");
+            workspace.ConfigureAction(action, preset => preset.Output = new()
+            {
+                Location = AZOTH.Core.Presets.OutputLocation.CustomFolder,
+                CustomFolder = folder,
+            });
+            workspace.UseDraft();
             radial.ShowForFiles(450, 400, inputs);
             var donut = radial.Window!.DonutControl;
             Assert.True(donut.HandleKey(Key.Right));
@@ -114,8 +117,7 @@ public class MergeOrderTests
         {
             windows.MergeOrder?.Close();
             radial.Close(animate: false);
-            profile.PresetIds = previous;
-            preset.Output = previousOutput;
+            workspace.ResetWorkspace();
             Directory.Delete(folder, true);
         }
     }
@@ -187,21 +189,19 @@ public class MergeOrderTests
     }
 
     /// <summary>
-    /// "Merge images" (#645): the same chooser, with the layout below the list. The choices go into the merge and are
-    /// remembered for the next one; Cancel starts nothing and remembers nothing.
+    /// "Merge images" (#645): the same chooser, with the layout below the list. The choices apply to this
+    /// conversion; the active action and catalog stay unchanged, including after Cancel.
     /// </summary>
     [AvaloniaTheory]
     [InlineData(false)]
     [InlineData(true)]
-    public async Task Donut_merge_of_pictures_takes_the_layout_chosen_and_remembers_it(bool cancel)
+    public async Task Donut_merge_of_pictures_takes_the_layout_chosen_and_keeps_the_action_snapshot_unchanged(bool cancel)
     {
         TestServices.EnsureInitialized();
         var folder = Directory.CreateTempSubdirectory("azoth-merge-images-").FullName;
         var store = AppHost.Get<UserDataStore>();
-        var profile = store.Profiles.Single(p => p.Id == "images");
-        var previous = profile.PresetIds;
-        var preset = store.FindPreset("merge-images")!;
-        var (previousOutput, previousImage) = (preset.Output, preset.Image.Clone());
+        var workspace = AppHost.Get<DonutWorkspace>();
+        var catalogImage = store.FindPreset("merge-images")!.Image.Clone();
         var conversions = AppHost.Get<ConversionService>();
         var before = conversions.Jobs.Select(j => j.Job.Id).ToHashSet();
         var radial = AppHost.Get<RadialController>();
@@ -210,13 +210,15 @@ public class MergeOrderTests
         {
             var wide = Picture(folder, "1 front.png", MagickColors.Red, 100, 40);
             var tall = Picture(folder, "2 back.png", MagickColors.Blue, 50, 80);
-            profile.PresetIds = ["merge-images"];
-            preset.Output = new()
+            workspace.ResetDraft();
+            var action = workspace.AddAction("merge-images");
+            workspace.ConfigureAction(action, preset => preset.Output = new()
             {
                 Location = AZOTH.Core.Presets.OutputLocation.CustomFolder,
                 CustomFolder = folder,
-                FileNamePattern = previousOutput.FileNamePattern,
-            };
+                FileNamePattern = preset.Output.FileNamePattern,
+            });
+            workspace.UseDraft();
             radial.ShowForFiles(450, 400, [tall, wide]);
             var donut = radial.Window!.DonutControl;
             Assert.True(donut.HandleKey(Key.Right));
@@ -248,14 +250,27 @@ public class MergeOrderTests
             Assert.False(dialog.FindControl<ColorPicker>("BackgroundPicker")!.IsEffectivelyEnabled);
             ClickControl(dialog, cancel ? "CancelMerge" : "StartMerge");
 
-            var saved = store.FindPreset("merge-images")!.Image;
+            void AssertActionUnchanged()
+            {
+                var active = workspace.Active!.Presets.Single().Image;
+                Assert.Equal((AZOTH.Core.Presets.ImageJoinDirection.Vertical, AZOTH.Core.Presets.ImageJoinFit.SameSize, 0, "#FFFFFF"),
+                    (active.JoinDirection, active.JoinFit, active.JoinGap, active.JoinBackground));
+                var catalog = store.FindPreset("merge-images")!.Image;
+                Assert.Equal((catalogImage.JoinDirection, catalogImage.JoinFit, catalogImage.JoinGap, catalogImage.JoinBackground),
+                    (catalog.JoinDirection, catalog.JoinFit, catalog.JoinGap, catalog.JoinBackground));
+                var reloadedStore = new UserDataStore(store.Directory);
+                reloadedStore.Load();
+                using var reloaded = new DonutWorkspace(reloadedStore);
+                var persisted = reloaded.Active!.Presets.Single().Image;
+                Assert.Equal((active.JoinDirection, active.JoinFit, active.JoinGap, active.JoinBackground),
+                    (persisted.JoinDirection, persisted.JoinFit, persisted.JoinGap, persisted.JoinBackground));
+            }
             if (cancel)
             {
                 await Task.Delay(50, TestContext.Current.CancellationToken);
                 Dispatcher.UIThread.RunJobs();
                 Assert.DoesNotContain(conversions.Jobs, j => !before.Contains(j.Job.Id));
-                Assert.Equal(AZOTH.Core.Presets.ImageJoinDirection.Vertical, saved.JoinDirection);
-                Assert.Equal("#FFFFFF", saved.JoinBackground);
+                AssertActionUnchanged();
                 return;
             }
 
@@ -281,22 +296,18 @@ public class MergeOrderTests
                 Assert.Equal(MagickColors.Blue, pixels.GetPixel(130, 5).ToColor());
             }
 
-            // Remembered in the library, also on disk, for the next merge.
+            // The chosen layout belongs to this job; a future merge starts from the owned action.
+            var executed = started.Job.Preset.Image;
             Assert.Equal((AZOTH.Core.Presets.ImageJoinDirection.Horizontal, AZOTH.Core.Presets.ImageJoinFit.Original, 6, "transparent"),
-                (saved.JoinDirection, saved.JoinFit, saved.JoinGap, saved.JoinBackground));
-            var reloaded = new UserDataStore(store.Directory);
-            reloaded.Load();
-            Assert.Equal(AZOTH.Core.Presets.ImageJoinDirection.Horizontal, reloaded.FindPreset("merge-images")!.Image.JoinDirection);
-            Assert.True(new MergeOrderViewModel([wide, tall], saved).SideBySide);
+                (executed.JoinDirection, executed.JoinFit, executed.JoinGap, executed.JoinBackground));
+            AssertActionUnchanged();
+            Assert.False(new MergeOrderViewModel([wide, tall], workspace.Active!.Presets.Single().Image).SideBySide);
         }
         finally
         {
             windows.MergeOrder?.Close();
             radial.Close(animate: false);
-            profile.PresetIds = previous;
-            preset.Output = previousOutput;
-            preset.Image = previousImage;
-            store.SaveLibrary();
+            workspace.ResetWorkspace();
             Directory.Delete(folder, true);
         }
     }

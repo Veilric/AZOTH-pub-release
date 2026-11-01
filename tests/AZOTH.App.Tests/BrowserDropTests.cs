@@ -18,6 +18,7 @@ using AZOTH.App.ViewModels;
 using AZOTH.App.Views;
 using AZOTH.App.Views.Pages;
 using AZOTH.Core.Conversion;
+using AZOTH.Core.Donuts;
 using AZOTH.Core.Settings;
 using AZOTH.Core.Web;
 
@@ -202,8 +203,12 @@ public class BrowserDropTests
         var folder = UseFolder(store, saveOnlyConverted: true);
         var radial = AppHost.Get<RadialController>();
         var conversions = AppHost.Get<ConversionService>();
+        var workspace = AppHost.Get<DonutWorkspace>();
         try
         {
+            workspace.ResetDraft();
+            workspace.AddAction("to-webp");
+            workspace.UseDraft();
             radial.ShowForDrag(500, 500);
             var window = radial.Window!;
             var root = window.FindControl<Panel>("Root")!;
@@ -237,6 +242,7 @@ public class BrowserDropTests
         finally
         {
             radial.Close(animate: false);
+            workspace.ResetWorkspace();
             Reset(store, folder);
         }
     }
@@ -261,10 +267,15 @@ public class BrowserDropTests
     public void A_picture_dropped_on_the_drop_zone_opens_the_donut_for_it_and_closing_lets_it_go()
     {
         TestServices.EnsureInitialized("en");
+        var workspace = AppHost.Get<DonutWorkspace>();
+        workspace.ResetDraft();
+        workspace.AddAction("to-webp");
+        workspace.UseDraft();
         var vm = new MainWindowViewModel(AppHost.Services, AppHost.Get<AZOTH.Core.Localization.ILocalizer>(), AppHost.Get<UpdateService>());
         vm.Navigate("home");
         var window = new MainWindow { DataContext = vm, Width = 1080, Height = 820 };
         window.Show();
+        window.FindControl<StartupLogo>("LaunchLogo")!.RevealAt(1.4);
         Pump();
         var radial = AppHost.Get<RadialController>();
         try
@@ -291,6 +302,7 @@ public class BrowserDropTests
         {
             radial.Close(animate: false);
             window.Close();
+            workspace.ResetWorkspace();
         }
     }
 

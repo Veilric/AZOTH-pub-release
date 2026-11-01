@@ -1272,13 +1272,15 @@ public class DonutFlipTests
             Assert.Equal(edited, page.DonutItems.Select(i => i.Id));
 
             page.Reset(page.SelectedProfile!);
-            Assert.Equal(BuiltInData.CreateProfiles().Single(p => p.Id == "images").BackPresetIds, Images.BackPresetIds);
+            var defaults = BuiltInData.CreatePrimaryProfiles().Single(p => p.Id == "images");
+            Assert.Equal(defaults.BackPresetIds, Images.BackPresetIds);
             Assert.Equal(Images.BackPresetIds, page.DonutItems.Select(i => i.Id)); // still on the back
 
             faces[0].IsChecked = true;
             RenderTests.Pump();
             Assert.False(page.EditingBack);
-            Assert.Equal(front, page.DonutItems.Select(i => i.Id));
+            Assert.Equal(defaults.PresetIds, Images.PresetIds);
+            Assert.Equal(defaults.PresetIds, page.DonutItems.Select(i => i.Id));
         }
         finally
         {

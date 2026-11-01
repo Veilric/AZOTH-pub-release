@@ -186,14 +186,14 @@ public class ToolbarPaletteViewTests
     public void Empty_tabs_and_redundant_row_disappear()
     {
         using var f = new PresetAvailabilityTests.Fixture();
-        // Nothing converts a WAV here: only the groups are left, and no tab row.
+        // Nothing converts a WAV here: groups and workspace actions need no redundant tab row.
         using var vm = f.Page(Profile("tabs-wav", "wav"));
         Dispatcher.UIThread.RunJobs();
         using var view = new View(vm);
         Assert.False(view.Tabs.IsVisible);
-        Assert.Equal(["pdf-edit", "rotate", "flip", "test-group"], view.Chips);
+        Assert.Equal(["spreadsheet-formats", "pdf-edit", "rotate", "flip", "test-group", "tool-echo", "tool-ordo"], view.Chips);
 
-        // PDF: one kind (Documents) that would only repeat All. Two tabs, but the row stays hidden.
+        // PDF: document conversions and workspace actions have distinct tabs.
         // (Without the PDF page tools, which would add the Edit kind.)
         f.Store.Presets.RemoveAll(p => p.Id.StartsWith("tool-pdf-", StringComparison.Ordinal));
         f.Store.Profiles.Add(Profile("tabs-pdf", "pdf"));
@@ -201,10 +201,10 @@ public class ToolbarPaletteViewTests
         vm.SelectedProfile = vm.Profiles[^1];
         Dispatcher.UIThread.RunJobs();
         RenderTests.Pump();
-        Assert.Equal([PaletteTab.All, PaletteTab.Document], view.TabIds);
-        Assert.False(view.Tabs.IsVisible);
+        Assert.Equal([PaletteTab.All, PaletteTab.Document, PaletteTab.Edit], view.TabIds);
+        Assert.True(view.Tabs.IsVisible);
         Assert.Equal(PaletteTab.All, view.Selected);
-        Assert.Equal(["pdf-edit", "rotate", "flip", "test-group", "merge-pdf", "test-merge"], view.Chips);
+        Assert.Equal(["spreadsheet-formats", "pdf-edit", "rotate", "flip", "test-group", "tool-echo", "tool-ordo", "merge-pdf", "test-merge"], view.Chips);
 
         // PNG: several kinds, so the row shows.
         f.Store.Profiles.Add(Profile("tabs-png", "png"));
@@ -260,29 +260,40 @@ public class ToolbarPaletteViewTests
         // only when more than one kind is left.
         TestServices.EnsureInitialized("en");
         var store = AppHost.Get<UserDataStore>();
-        using var vm = new ToolbarPageViewModel(store, AppHost.Get<ILocalizer>(), AppHost.Get<WindowService>(),
-            AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
-        vm.SelectedProfile = vm.Profiles.Single(p => p.Profile.Id == "audio");
-        Dispatcher.UIThread.RunJobs();
-        using var view = new View(vm);
-        var groups = store.Presets.Where(p => p.IsGroup).Select(p => p.Id).ToList();
-
-        Assert.Equal(PaletteTab.All, view.Selected);
-        Assert.Equal(PaletteTab.All, vm.SelectedTab!.Id);
-        var all = view.Chips.ToList();
-        Assert.Equal(groups, all.Take(groups.Count));
-        var presets = all.Skip(groups.Count).ToList();
-        Assert.NotEmpty(presets);
-        PaletteTab KindOf(string id) => ToolbarPageViewModel.TabOf(store.FindPreset(id)!);
-        var kinds = ToolbarPageViewModel.TabDefinitions.Select(d => d.Id).Where(t => presets.Any(id => KindOf(id) == t)).ToList();
-        Assert.Equal([PaletteTab.All, .. kinds], view.TabIds);
-        Assert.Equal(kinds.Count > 1, view.Tabs.IsVisible);
-
-        foreach (var kind in kinds)
+        var profiles = store.Profiles.ToList();
+        store.Profiles.Clear();
+        store.Profiles.AddRange(AZOTH.Core.Presets.BuiltInData.CreatePrimaryProfiles());
+        try
         {
-            vm.SelectedTab = vm.Tabs.Single(t => t.Id == kind);
-            RenderTests.Pump();
-            Assert.Equal([.. groups, .. presets.Where(id => KindOf(id) == kind)], view.Chips);
+            using var vm = new ToolbarPageViewModel(store, AppHost.Get<ILocalizer>(), AppHost.Get<WindowService>(),
+                AppHost.Get<PresetAvailability>(), AppHost.Get<ConverterCatalog>(), NullLogger<ToolbarPageViewModel>.Instance);
+            vm.SelectedProfile = vm.Profiles.Single(p => p.Profile.Id == "audio");
+            Dispatcher.UIThread.RunJobs();
+            using var view = new View(vm);
+            var groups = store.Presets.Where(p => p.IsGroup).Select(p => p.Id).ToList();
+
+            Assert.Equal(PaletteTab.All, view.Selected);
+            Assert.Equal(PaletteTab.All, vm.SelectedTab!.Id);
+            var all = view.Chips.ToList();
+            Assert.Equal(groups, all.Take(groups.Count));
+            var presets = all.Skip(groups.Count).ToList();
+            Assert.NotEmpty(presets);
+            PaletteTab KindOf(string id) => ToolbarPageViewModel.TabOf(store.FindPreset(id)!);
+            var kinds = ToolbarPageViewModel.TabDefinitions.Select(d => d.Id).Where(t => presets.Any(id => KindOf(id) == t)).ToList();
+            Assert.Equal([PaletteTab.All, .. kinds], view.TabIds);
+            Assert.Equal(kinds.Count > 1, view.Tabs.IsVisible);
+
+            foreach (var kind in kinds)
+            {
+                vm.SelectedTab = vm.Tabs.Single(t => t.Id == kind);
+                RenderTests.Pump();
+                Assert.Equal([.. groups, .. presets.Where(id => KindOf(id) == kind)], view.Chips);
+            }
+        }
+        finally
+        {
+            store.Profiles.Clear();
+            store.Profiles.AddRange(profiles);
         }
     }
 
@@ -474,7 +485,7 @@ public class ToolbarPaletteViewTests
         view.Click(faces[1]);
         Assert.True(vm.EditingBack);
         Assert.Equal(PaletteTab.Media, view.Selected);
-        Assert.Equal(["pdf-edit", "rotate", "flip", "test-group", "extract-motion", "test-motion"], view.Chips);
+        Assert.Equal(["spreadsheet-formats", "pdf-edit", "rotate", "flip", "test-group", "extract-motion", "test-motion"], view.Chips);
         view.Click(faces[0]);
         Assert.False(vm.EditingBack);
         Assert.Equal(PaletteTab.Media, view.Selected);
@@ -491,7 +502,7 @@ public class ToolbarPaletteViewTests
         RenderTests.Pump();
         Assert.Equal(PaletteTab.All, view.Selected);
         view.ClickTab(PaletteTab.Edit);
-        Assert.Equal(["pdf-edit", "rotate", "flip", "test-group", "tool-crop", "tool-image-edit", "tool-hide"], view.Chips);
+        Assert.Equal(["spreadsheet-formats", "pdf-edit", "rotate", "flip", "test-group", "tool-crop", "tool-image-edit", "tool-hide", "tool-echo", "tool-ordo"], view.Chips);
         DoubleTap(view.Chip("tool-crop"));
         RenderTests.Pump();
         Assert.Equal(["tool-crop"], jpg.PresetIds);
@@ -501,9 +512,14 @@ public class ToolbarPaletteViewTests
         DoubleTap(view.Chip("tool-hide"));
         RenderTests.Pump();
         Assert.Equal(["tool-crop", "tool-image-edit", "tool-hide"], jpg.PresetIds);
+        DoubleTap(view.Chip("tool-echo"));
+        RenderTests.Pump();
+        DoubleTap(view.Chip("tool-ordo"));
+        RenderTests.Pump();
+        Assert.Equal(["tool-crop", "tool-image-edit", "tool-hide", "tool-echo", "tool-ordo"], jpg.PresetIds);
         Assert.DoesNotContain(PaletteTab.Edit, view.TabIds);
         Assert.Equal(PaletteTab.All, view.Selected);
-        Assert.Equal(["pdf-edit", "rotate", "flip", "test-group", "extract-motion", "test-motion"], view.Chips);
+        Assert.Equal(["spreadsheet-formats", "pdf-edit", "rotate", "flip", "test-group", "extract-motion", "test-motion"], view.Chips);
     }
 
     [AvaloniaFact]

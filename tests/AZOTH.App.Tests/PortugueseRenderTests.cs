@@ -249,12 +249,19 @@ public class PortugueseRenderTests
     public void Editors_fit_at_the_default_window_width(string language, string page)
     {
         TestServices.EnsureInitialized(language);
+        var store = AppHost.Get<UserDataStore>();
+        var profiles = store.Profiles.Select(p => p.Clone()).ToList();
+        if (page == "toolbar" && store.Profiles.Count == 0) store.Profiles.AddRange(BuiltInData.CreateProfiles());
         using var vm = new MainWindowViewModel(AppHost.Services, AppHost.Get<ILocalizer>(), AppHost.Get<UpdateService>());
         vm.Navigate(page);
+        // These assertions cover the legacy editor's controls; the builder is rendered by the page matrix above.
+        if (page == "toolbar")
+            vm.CurrentPage = Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance<AZOTH.App.ViewModels.Pages.ToolbarPageViewModel>(AppHost.Services);
         var window = new MainWindow { DataContext = vm, Width = 1080, Height = 820 };
         try
         {
             window.Show();
+            window.FindControl<AZOTH.App.Controls.StartupLogo>("LaunchLogo")!.RevealAt(1.4);
             RenderTests.Pump();
             var editor = window.GetVisualDescendants().OfType<ScrollViewer>().Single(s => s.Name == "EditorScroller");
             Capture(window, $"default-{page}-{language}.png");
@@ -281,6 +288,9 @@ public class PortugueseRenderTests
         finally
         {
             window.Close();
+            store.Profiles.Clear();
+            store.Profiles.AddRange(profiles);
+            store.SaveLibrary();
         }
     }
 

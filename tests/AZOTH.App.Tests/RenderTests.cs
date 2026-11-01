@@ -2553,13 +2553,18 @@ public class RenderTests
         Window? window = null;
         try
         {
+            // Exercise imported catalog layouts explicitly; a new library starts without saved profiles.
+            store.Profiles.Clear();
+            store.Profiles.AddRange(AZOTH.Core.Presets.BuiltInData.CreateProfiles());
             change(store.Profiles);
             if (dark)
                 theme.Apply(new ThemeSettings { Mode = ThemeMode.Dark }, language);
             using var vm = new MainWindowViewModel(AppHost.Services, AppHost.Get<ILocalizer>(), AppHost.Get<UpdateService>());
             vm.Navigate("toolbar");
+            vm.CurrentPage = Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateInstance<ToolbarPageViewModel>(AppHost.Services);
             window = new MainWindow { DataContext = vm, Width = 1080, Height = height };
             window.Show();
+            window.FindControl<StartupLogo>("LaunchLogo")!.RevealAt(1.4);
             Pump();
             act(window, (ToolbarPageViewModel)vm.CurrentPage);
         }
