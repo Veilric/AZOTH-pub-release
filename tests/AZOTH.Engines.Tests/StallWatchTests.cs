@@ -8,6 +8,11 @@ using AZOTH.Engines.Infrastructure;
 
 namespace AZOTH.Engines.Tests;
 
+// Progress deadlines require an uncontended scheduler, separate from concurrent conversion tests.
+[CollectionDefinition(nameof(StallWatchCollection), DisableParallelization = true)]
+public sealed class StallWatchCollection;
+
+[Collection(nameof(StallWatchCollection))]
 public sealed class StallWatchTests
 {
     private static readonly TimeSpan Interval = TimeSpan.FromMilliseconds(20);

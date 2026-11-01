@@ -9,7 +9,12 @@ namespace AZOTH.Platform.Tests;
 
 public sealed class FileMetadataTests : IDisposable
 {
-    private readonly string _root = Directory.CreateTempSubdirectory("azoth-metadata-").FullName;
+    private readonly string _root = PhysicalTempPath(Directory.CreateTempSubdirectory("azoth-metadata-").FullName);
+
+    // macOS /var is a symlink; these identity tests need a fixture without linked ancestors.
+    private static string PhysicalTempPath(string path) =>
+        OperatingSystem.IsMacOS() && path.StartsWith("/var/", StringComparison.Ordinal) ? "/private" + path : path;
+
     private static IFileMetadata Native() => OperatingSystem.IsLinux() ? new LinuxFileMetadata()
         : OperatingSystem.IsWindows() ? new WindowsFileMetadata()
         : OperatingSystem.IsMacOS() ? new MacOSFileMetadata() : new UnsupportedFileMetadata();
