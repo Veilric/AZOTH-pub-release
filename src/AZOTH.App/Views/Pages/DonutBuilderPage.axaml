@@ -1,0 +1,123 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:AZOTH.App.ViewModels.Pages"
+             xmlns:m="using:AZOTH.App.ViewModels"
+             xmlns:c="using:AZOTH.App.Controls"
+             x:Class="AZOTH.App.Views.Pages.DonutBuilderPage"
+             x:DataType="vm:DonutBuilderPageViewModel">
+  <StackPanel Spacing="14">
+    <Grid ColumnDefinitions="*,Auto">
+      <StackPanel Spacing="5">
+        <TextBlock Classes="h1" Text="{DynamicResource builder.title}" />
+        <TextBlock Text="{Binding ActiveStatus}" FontWeight="SemiBold" TextWrapping="Wrap" MaxWidth="540" HorizontalAlignment="Left" />
+      </StackPanel>
+      <Button Grid.Column="1" Classes="accent" Content="{DynamicResource builder.use}" Command="{Binding UseCommand}"
+              IsEnabled="{Binding CanUse}" VerticalAlignment="Center" />
+    </Grid>
+    <TextBlock Classes="muted" Text="{DynamicResource builder.intro}" TextWrapping="Wrap" />
+    <Border Background="{DynamicResource SurfaceAltBrush}" CornerRadius="12" Padding="14,10">
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Spacing="3">
+          <TextBlock Text="{Binding DraftStatus}" FontWeight="SemiBold" />
+          <TextBlock Classes="caption" Text="{DynamicResource builder.draft_note}" TextWrapping="Wrap" MaxWidth="430" HorizontalAlignment="Left" />
+        </StackPanel>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6" VerticalAlignment="Center">
+          <Button Content="{DynamicResource builder.discard}" Command="{Binding DiscardCommand}" />
+          <Button Content="{DynamicResource builder.reset}" Command="{Binding ResetCommand}" />
+        </StackPanel>
+      </Grid>
+    </Border>
+    <TextBlock Text="{Binding Message}" Foreground="{DynamicResource DangerBrush}" TextWrapping="Wrap" />
+    <ScrollViewer x:Name="BuilderScroller" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+    <Grid ColumnDefinitions="230,20,*" MinWidth="700" Width="{Binding #BuilderScroller.Viewport.Width}" HorizontalAlignment="Left">
+      <StackPanel Spacing="9">
+        <TextBlock Classes="h2" Text="{DynamicResource builder.actions}" />
+        <CheckBox Content="{DynamicResource builder.more_formats}" IsChecked="{Binding ShowMoreFormats}" />
+        <TextBox Text="{Binding Search}" PlaceholderText="{DynamicResource common.search}" Classes="search clearButton" />
+        <ComboBox ItemsSource="{Binding Categories}" SelectedItem="{Binding Category}" AutomationProperties.Name="{DynamicResource builder.actions}" HorizontalAlignment="Stretch">
+          <ComboBox.ItemTemplate><DataTemplate x:DataType="m:IChoice"><TextBlock Text="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate>
+        </ComboBox>
+        <ListBox x:Name="CatalogList" ItemsSource="{Binding Catalog}" SelectedItem="{Binding SelectedCatalog}" Height="365" Classes="soft">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:BuilderAction">
+              <StackPanel Spacing="2">
+                <TextBlock Text="{Binding Label}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                <TextBlock Text="{Binding Caption}" Classes="caption" />
+              </StackPanel>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Classes="accent" Content="{DynamicResource builder.add}" Command="{Binding AddCommand}" IsEnabled="{Binding CanAdd}" HorizontalAlignment="Stretch" />
+        <WrapPanel>
+          <Button Content="{DynamicResource builder.new_action}" Command="{Binding NewActionCommand}" Margin="0,0,5,5" />
+          <Button Content="{DynamicResource builder.new_group}" Command="{Binding NewGroupCommand}" Margin="0,0,5,5" />
+        </WrapPanel>
+      </StackPanel>
+      <StackPanel Grid.Column="2" Spacing="9">
+        <Grid ColumnDefinitions="*,Auto,Auto">
+          <TextBlock Text="{Binding FaceStatus}" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <Button Grid.Column="1" Content="{DynamicResource toolbar.face_front}" Classes.accent="{Binding !EditingBack}" Command="{Binding FrontCommand}" Margin="0,0,5,0" />
+          <Button Grid.Column="2" Content="{DynamicResource toolbar.face_back}" Classes.accent="{Binding EditingBack}" Command="{Binding BackCommand}" />
+        </Grid>
+        <c:DonutMenu x:Name="Preview" IsEditMode="True" Items="{Binding DonutItems}" CenterTitle="{DynamicResource builder.preview}" CenterSubtitle="{Binding FaceStatus}"
+                     OuterRadius="135" HoleRatio="0.46" HorizontalAlignment="Center" />
+        <ListBox x:Name="ActionList" ItemsSource="{Binding Actions}" SelectedItem="{Binding SelectedAction}" Height="140" Classes="soft">
+          <ListBox.ItemTemplate>
+            <DataTemplate x:DataType="vm:BuilderAction">
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBlock Text="{Binding Label}" TextTrimming="CharacterEllipsis" />
+                <TextBlock Grid.Column="1" Text="{Binding Caption}" Classes="caption" Margin="10,0,0,0" />
+              </Grid>
+            </DataTemplate>
+          </ListBox.ItemTemplate>
+        </ListBox>
+        <WrapPanel>
+          <Button Content="↑" Command="{Binding MoveUpCommand}" IsEnabled="{Binding CanMoveUp}" AutomationProperties.Name="{DynamicResource group.move_up}" Margin="0,0,5,5" />
+          <Button Content="↓" Command="{Binding MoveDownCommand}" IsEnabled="{Binding CanMoveDown}" AutomationProperties.Name="{DynamicResource group.move_down}" Margin="0,0,5,5" />
+          <Button Content="{DynamicResource builder.edit}" Command="{Binding EditActionCommand}" IsEnabled="{Binding HasActionSelection}" Margin="0,0,5,5" />
+          <Button Content="{DynamicResource builder.remove}" Command="{Binding RemoveCommand}" IsEnabled="{Binding HasActionSelection}" Margin="0,0,5,5" />
+        </WrapPanel>
+        <ItemsControl ItemsSource="{Binding Children}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="vm:BuilderAction">
+              <Button Content="{Binding Label}" HorizontalAlignment="Stretch" Margin="16,0,0,4"
+                      Command="{Binding $parent[UserControl].((vm:DonutBuilderPageViewModel)DataContext).EditActionCommand}" CommandParameter="{Binding}" />
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </StackPanel>
+    </Grid>
+    </ScrollViewer>
+    <TextBlock Classes="caption" Text="{DynamicResource builder.keyboard}" TextWrapping="Wrap" />
+    <Separator />
+    <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto">
+      <TextBox Text="{Binding Name}" PlaceholderText="{DynamicResource builder.name}" AutomationProperties.Name="{DynamicResource builder.name}" />
+      <Button Grid.Column="1" Content="{DynamicResource builder.save_as}" Command="{Binding SaveAsCommand}" Margin="8,0,0,0" />
+      <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Classes="caption" Text="{DynamicResource builder.save_note}" Margin="0,5,0,0" TextWrapping="Wrap" />
+    </Grid>
+    <Expander Header="{DynamicResource builder.saved}" HorizontalAlignment="Stretch">
+      <StackPanel Spacing="8">
+        <ComboBox ItemsSource="{Binding Saved}" SelectedItem="{Binding SelectedSaved}" PlaceholderText="{DynamicResource builder.select_saved}" HorizontalAlignment="Stretch">
+          <ComboBox.ItemTemplate><DataTemplate x:DataType="m:IChoice"><TextBlock Text="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate>
+        </ComboBox>
+        <WrapPanel IsEnabled="{Binding HasSavedSelection}">
+          <Button Content="{DynamicResource builder.load_saved}" Command="{Binding LoadSavedCommand}" Margin="0,0,6,6" />
+          <Button Content="{DynamicResource builder.activate}" Command="{Binding ActivateCommand}" Margin="0,0,6,6" />
+          <Button Content="{DynamicResource builder.update_saved}" Command="{Binding UpdateSavedCommand}" Margin="0,0,6,6" />
+          <Button Content="{DynamicResource builder.rename}" Command="{Binding RenameCommand}" Margin="0,0,6,6" />
+          <Button Content="{DynamicResource builder.duplicate}" Command="{Binding DuplicateCommand}" Margin="0,0,6,6" />
+          <Button Content="{DynamicResource builder.delete}" Command="{Binding DeleteCommand}" Margin="0,0,6,6" />
+        </WrapPanel>
+        <TextBlock Classes="caption" Text="{DynamicResource builder.saved_note}" TextWrapping="Wrap" />
+      </StackPanel>
+    </Expander>
+    <Expander Header="{DynamicResource builder.templates}" HorizontalAlignment="Stretch">
+      <Grid ColumnDefinitions="*,Auto">
+        <ComboBox ItemsSource="{Binding Templates}" SelectedItem="{Binding SelectedTemplate}" PlaceholderText="{DynamicResource builder.select_template}" HorizontalAlignment="Stretch">
+          <ComboBox.ItemTemplate><DataTemplate x:DataType="m:IChoice"><TextBlock Text="{Binding Label}" /></DataTemplate></ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Grid.Column="1" Content="{DynamicResource builder.load_template}" Command="{Binding LoadTemplateCommand}" Margin="8,0,0,0" />
+      </Grid>
+    </Expander>
+  </StackPanel>
+</UserControl>

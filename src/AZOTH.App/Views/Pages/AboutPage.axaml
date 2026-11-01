@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:AZOTH.App.ViewModels.Pages"
+             xmlns:c="using:AZOTH.App.Controls"
+             x:Class="AZOTH.App.Views.Pages.AboutPage"
+             x:DataType="vm:AboutPageViewModel">
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <Bitmap x:Key="AzothWordmark">avares://AZOTH/Assets/Icons/azoth-horizontal-dark.png</Bitmap>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <Bitmap x:Key="AzothWordmark">avares://AZOTH/Assets/Icons/azoth-horizontal-dark.png</Bitmap>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+  <StackPanel Spacing="18">
+    <TextBlock Classes="h1" Text="{DynamicResource about.title}" />
+    <Border Classes="card">
+      <StackPanel Orientation="Horizontal" Spacing="18">
+        <Image Source="avares://AZOTH/Assets/Icons/azoth.png" Width="80" Height="80" />
+        <StackPanel VerticalAlignment="Center" Spacing="4">
+          <Image Source="{DynamicResource AzothWordmark}" Width="220" Height="110" HorizontalAlignment="Left" />
+          <TextBlock Classes="caption" Text="{DynamicResource app.tagline}" />
+          <TextBlock Classes="muted" Text="{Binding Version}" />
+          <TextBlock Classes="muted" Text="{DynamicResource about.license}" />
+          <Button Classes="ghost" Padding="0" Click="OnOpenRepository" Margin="0,4,0,0" Content="github.com/Veilric/AZOTH-pub-release" />
+          <Button x:Name="WhatsNewLink" Classes="ghost" Padding="0" Command="{Binding ShowWhatsNewCommand}"
+                  IsVisible="{Binding HasWhatsNew}" Content="{Binding WhatsNewText}" />
+        </StackPanel>
+      </StackPanel>
+    </Border>
+    <Border Classes="card">
+      <StackPanel Spacing="10">
+        <TextBlock Classes="h2" Text="{DynamicResource about.updates}" />
+        <ToggleSwitch Content="{DynamicResource general.check_updates}" IsChecked="{Binding CheckForUpdates}"
+                      IsEnabled="{Binding IsUpdateConfigured}" />
+        <Button Content="{DynamicResource general.check_now}" Command="{Binding CheckNowCommand}"
+                IsVisible="{Binding IsUpdateConfigured}" HorizontalAlignment="Left" />
+        <Button Classes="accent" Command="{Binding DownloadUpdateCommand}" IsVisible="{Binding UpdateAvailable}"
+                Content="{Binding UpdateButtonText}" HorizontalAlignment="Left" />
+        <TextBlock Classes="muted" TextWrapping="Wrap" Text="{Binding UpdateStatus}" />
+      </StackPanel>
+    </Border>
+    <Border Classes="card">
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h2" Text="{DynamicResource about.origin}" />
+        <TextBlock Classes="muted" TextWrapping="Wrap" Text="{DynamicResource about.origin_text}" />
+        <Button Classes="ghost" Padding="0" Click="OnOpenUpstream" HorizontalAlignment="Left"
+                Content="github.com/KnifeLemon/Filee" />
+      </StackPanel>
+    </Border>
+    <Border Classes="card">
+      <StackPanel Spacing="8">
+        <TextBlock Classes="h2" Text="{DynamicResource about.notices}" />
+        <c:MarkdownView Markdown="{Binding Notices}" SkipTitle="True" FlowDirection="LeftToRight" />
+      </StackPanel>
+    </Border>
+  </StackPanel>
+</UserControl>

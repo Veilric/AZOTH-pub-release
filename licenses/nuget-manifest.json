@@ -1,0 +1,2515 @@
+{
+  "scope": "Restored cache metadata, including direct/transitive/build/test packages and possibly unused versions; not a shipped runtime closure.",
+  "missingLicensePolicy": "Unknown; never default to MIT. Native payload licenses may differ from package metadata.",
+  "packages": [
+    {
+      "id": "ACadSharp",
+      "version": "3.8.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "DomCr",
+      "copyright": "Copyright (c) 2026 Albert Domenech",
+      "projectUrl": "https://github.com/DomCR/ACadSharp",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DomCR/ACadSharp",
+        "commit": "3a1c66b9932f9e2dbfbbf3f03660c97d52e49b02"
+      },
+      "notices": []
+    },
+    {
+      "id": "AngleSharp",
+      "version": "1.8.2",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "AngleSharp",
+      "copyright": "Copyright 2013-2026, AngleSharp.",
+      "projectUrl": "https://anglesharp.github.io/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AngleSharp/AngleSharp",
+        "branch": "refs/heads/main",
+        "commit": "35b26db83557a6a74ce286907833e3b17806d9eb"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj",
+        "src/AZOTH.Setup/AZOTH.Setup.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Angle.Windows.Natives",
+      "version": "2.1.27548.20260419",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "file",
+        "value": "LICENSE"
+      },
+      "licenseUrl": "https://aka.ms/deprecateLicenseUrl",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/angle/",
+        "commit": "1c89805903c1482166356d3b950d474973180e61"
+      },
+      "notices": [
+        {
+          "file": "nuget/Avalonia.Angle.Windows.Natives/2.1.27548.20260419/LICENSE",
+          "sha256": "54aff7276217df9f6b5181613999d208c9e40d2b1d51bf55217837e6871a4a63"
+        }
+      ]
+    },
+    {
+      "id": "Avalonia.BuildServices",
+      "version": "11.3.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2023-2025 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia.BuildServices",
+        "commit": "777f975b0a0cecf0311273711d56697212c558c0"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Controls.ColorPicker",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Desktop",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj",
+        "src/AZOTH.Setup/AZOTH.Setup.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Fonts.Inter",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.FreeDesktop",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.FreeDesktop.AtSpi",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.HarfBuzz",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Headless",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Headless.XUnit",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "tests/AZOTH.App.Tests/AZOTH.App.Tests.csproj",
+        "tests/AZOTH.Setup.Tests/AZOTH.Setup.Tests.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Native",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Remote.Protocol",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Skia",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Themes.Fluent",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj",
+        "src/AZOTH.Setup/AZOTH.Setup.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Wayland",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.Win32",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "Avalonia.X11",
+      "version": "12.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Avalonia Team",
+      "copyright": "Copyright 2013-2026 © The AvaloniaUI Project",
+      "projectUrl": "https://avaloniaui.net/?utm_source=nuget&utm_medium=referral&utm_content=project_homepage_link",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/AvaloniaUI/Avalonia/",
+        "branch": "refs/heads/release/12.1.3",
+        "commit": "8eeda4f6f546165b3f72e63c9f42247abb306905"
+      },
+      "notices": []
+    },
+    {
+      "id": "AvaloniaUI.DiagnosticsSupport",
+      "version": "2.2.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj"
+      ],
+      "license": null,
+      "licenseUrl": null,
+      "authors": "AvaloniaUI OÜ",
+      "copyright": "Copyright 2019-2026 © AvaloniaUI OÜ",
+      "projectUrl": "https://avaloniaui.net/",
+      "repository": {
+        "type": "git",
+        "commit": "92df9d92acf0bbe8b2ffa96370c1bf848df81d27"
+      },
+      "notices": []
+    },
+    {
+      "id": "bblanchon.PDFium.Linux",
+      "version": "147.0.7690",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "Benoît Blanchon",
+      "copyright": "Copyright © Benoît Blanchon 2017-2025",
+      "projectUrl": "https://github.com/bblanchon/pdfium-binaries",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/bblanchon/pdfium-binaries.git",
+        "branch": "master",
+        "commit": "9d8f70d3f4c0d37c0a479407805ceab4dd68d516"
+      },
+      "notices": []
+    },
+    {
+      "id": "bblanchon.PDFium.macOS",
+      "version": "147.0.7690",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "Benoît Blanchon",
+      "copyright": "Copyright © Benoît Blanchon 2017-2025",
+      "projectUrl": "https://github.com/bblanchon/pdfium-binaries",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/bblanchon/pdfium-binaries.git",
+        "branch": "master",
+        "commit": "9d8f70d3f4c0d37c0a479407805ceab4dd68d516"
+      },
+      "notices": []
+    },
+    {
+      "id": "bblanchon.PDFium.Win32",
+      "version": "147.0.7690",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "Benoît Blanchon",
+      "copyright": "Copyright © Benoît Blanchon 2017-2025",
+      "projectUrl": "https://github.com/bblanchon/pdfium-binaries",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/bblanchon/pdfium-binaries.git",
+        "branch": "master",
+        "commit": "9d8f70d3f4c0d37c0a479407805ceab4dd68d516"
+      },
+      "notices": []
+    },
+    {
+      "id": "CommunityToolkit.Mvvm",
+      "version": "8.4.2",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj",
+        "src/AZOTH.Setup/AZOTH.Setup.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "(c) .NET Foundation and Contributors. All rights reserved.",
+      "projectUrl": "https://github.com/CommunityToolkit/dotnet",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/CommunityToolkit/dotnet",
+        "branch": "refs/heads/rel/8.4.2",
+        "commit": "35dfe7b12da0e64384bfaec7ebc0883196a89f9f"
+      },
+      "notices": [
+        {
+          "file": "nuget/CommunityToolkit.Mvvm/8.4.2/License.md",
+          "sha256": "651997ef19dbb9ecb8dd660dbc86444a65af21f18cfe08daa69bf201cd5cfdfc"
+        }
+      ]
+    },
+    {
+      "id": "DocumentFormat.OpenXml",
+      "version": "3.5.1",
+      "directReferenceProjectsById": [
+        "tests/AZOTH.Engines.Tests/AZOTH.Engines.Tests.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/dotnet/Open-XML-SDK",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/Open-XML-SDK",
+        "branch": "refs/heads/main",
+        "commit": "3139fdfd27414548a41555f7848d5728f6e71a42"
+      },
+      "notices": []
+    },
+    {
+      "id": "DocumentFormat.OpenXml.Framework",
+      "version": "3.5.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/dotnet/Open-XML-SDK",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/Open-XML-SDK",
+        "branch": "refs/heads/main",
+        "commit": "3139fdfd27414548a41555f7848d5728f6e71a42"
+      },
+      "notices": []
+    },
+    {
+      "id": "ExcelDataReader",
+      "version": "3.9.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "ExcelDataReader developers",
+      "copyright": null,
+      "projectUrl": "https://github.com/ExcelDataReader/ExcelDataReader",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ExcelDataReader/ExcelDataReader",
+        "commit": "f3343f5524518923bdeb4801e5003c0417fd35f3"
+      },
+      "notices": []
+    },
+    {
+      "id": "ExcelNumberFormat",
+      "version": "1.1.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "ExcelNumberFormat developers",
+      "copyright": null,
+      "projectUrl": "https://github.com/andersnm/ExcelNumberFormat",
+      "repository": null,
+      "notices": []
+    },
+    {
+      "id": "ExCSS",
+      "version": "4.3.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Tyler Brinks",
+      "copyright": null,
+      "projectUrl": "https://github.com/TylerBrinks/ExCSS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/TylerBrinks/ExCSS",
+        "commit": "c97e84d6126bb2e42658cf5af627d52e697c8779"
+      },
+      "notices": []
+    },
+    {
+      "id": "HarfBuzzSharp",
+      "version": "8.3.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/HarfBuzzSharp/8.3.1.3/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.Linux",
+      "version": "8.3.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/HarfBuzzSharp.NativeAssets.Linux/8.3.1.3/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.macOS",
+      "version": "8.3.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/HarfBuzzSharp.NativeAssets.macOS/8.3.1.3/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.WebAssembly",
+      "version": "8.3.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/HarfBuzzSharp.NativeAssets.WebAssembly/8.3.1.3/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.Win32",
+      "version": "8.3.1.3",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/HarfBuzzSharp.NativeAssets.Win32/8.3.1.3/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "Magick.NET-Q8-AnyCPU",
+      "version": "14.17.2",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "Dirk Lemstra",
+      "copyright": "Copyright 2013-2026 Dirk Lemstra",
+      "projectUrl": "https://github.com/dlemstra/Magick.NET",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dlemstra/Magick.NET",
+        "branch": "main",
+        "commit": "aa58615154d7895c800fe756c695a55e4ee5d4ee"
+      },
+      "notices": [
+        {
+          "file": "nuget/Magick.NET-Q8-AnyCPU/14.17.2/Notice.txt",
+          "sha256": "38037a04466c03f8698907dc1b79e6e6d7813c9cf021439b4547cf99469df751"
+        }
+      ]
+    },
+    {
+      "id": "Magick.NET.Core",
+      "version": "14.17.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "Dirk Lemstra",
+      "copyright": "Copyright 2013-2026 Dirk Lemstra",
+      "projectUrl": "https://github.com/dlemstra/Magick.NET",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dlemstra/Magick.NET",
+        "branch": "main",
+        "commit": "aa58615154d7895c800fe756c695a55e4ee5d4ee"
+      },
+      "notices": []
+    },
+    {
+      "id": "Markdig",
+      "version": "1.4.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj",
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "BSD-2-Clause"
+      },
+      "licenseUrl": "https://licenses.nuget.org/BSD-2-Clause",
+      "authors": "Alexandre Mutel",
+      "copyright": "Alexandre Mutel",
+      "projectUrl": "https://xoofx.github.io/markdig",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xoofx/markdig",
+        "commit": "56e9c238584a44a169f174c881855c049768634c"
+      },
+      "notices": []
+    },
+    {
+      "id": "MicroCom.Runtime",
+      "version": "0.11.6",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "MicroCom.Runtime",
+      "copyright": "Copyright 2021 © Nikita Tsukanov",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/kekekeks/MicroCom",
+        "commit": "76785efcafd91b5902fd19dd11145f6dd655b7b4"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.ApplicationInsights",
+      "version": "2.23.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?LinkId=392727",
+      "repository": {
+        "type": "Git",
+        "url": "https://github.com/Microsoft/ApplicationInsights-dotnet",
+        "commit": "2faa7e8b157a431daa2e71785d68abd5fa817b53"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://asp.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.AspNetCore.App.Runtime.linux-x64/10.0.0/LICENSE.txt",
+          "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.osx-arm64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://asp.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.AspNetCore.App.Runtime.osx-arm64/10.0.0/LICENSE.txt",
+          "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.AspNetCore.App.Runtime.win-x64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://asp.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.AspNetCore.App.Runtime.win-x64/10.0.0/LICENSE.txt",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Bcl.AsyncInterfaces",
+      "version": "6.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/runtime",
+        "commit": "4822e3c3aa77eb82b2fb33c9321f923cf11ddde6"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Bcl.AsyncInterfaces/6.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.CodeCoverage",
+      "version": "18.10.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/vstest",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/vstest",
+        "branch": "18.10",
+        "commit": "87dfd4b2d2bacd91ad69e009ade6f4715b3b46ec"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "8.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/runtime",
+        "commit": "5535e31a712343a63f5d7d796cd874e563e5ac14"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Logging",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Core/AZOTH.Core.csproj",
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Core/AZOTH.Core.csproj",
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/runtime",
+        "commit": "5535e31a712343a63f5d7d796cd874e563e5ac14"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Extensions.Logging.Abstractions/8.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "8.0.3",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Core/AZOTH.Core.csproj",
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/runtime",
+        "commit": "eba546b0f0d448e0176a2222548fd7a2fbf464c0"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Extensions.Logging.Abstractions/8.0.3/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Options",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Extensions.Primitives",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.IO.RecyclableMemoryStream",
+      "version": "3.0.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/Microsoft/Microsoft.IO.RecyclableMemoryStream",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/Microsoft.IO.RecyclableMemoryStream",
+        "commit": "e29a28387da9018fa9605a1dcb3f7a0435aa9974"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Maui.Graphics",
+      "version": "10.0.110",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/dotnet/maui",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/maui.git",
+        "commit": "6c379bf1dc24461a985a093be3fd8a3e9bc6fc00"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Maui.Graphics/10.0.110/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.NET.ILLink.Tasks",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.NET.Test.Sdk",
+      "version": "18.10.1",
+      "directReferenceProjectsById": [
+        "tests/AZOTH.App.Tests/AZOTH.App.Tests.csproj",
+        "tests/AZOTH.Cli.Tests/AZOTH.Cli.Tests.csproj",
+        "tests/AZOTH.Core.Tests/AZOTH.Core.Tests.csproj",
+        "tests/AZOTH.Engines.Tests/AZOTH.Engines.Tests.csproj",
+        "tests/AZOTH.Platform.Tests/AZOTH.Platform.Tests.csproj",
+        "tests/AZOTH.Setup.Tests/AZOTH.Setup.Tests.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/vstest",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/vstest",
+        "branch": "18.10",
+        "commit": "87dfd4b2d2bacd91ad69e009ade6f4715b3b46ec"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.NETCore.App.Host.osx-arm64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.NETCore.App.Host.osx-arm64/10.0.0/LICENSE.TXT",
+          "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.NETCore.App.Host.win-x64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.NETCore.App.Host.win-x64/10.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.NETCore.App.Runtime.linux-x64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.NETCore.App.Runtime.linux-x64/10.0.0/LICENSE.TXT",
+          "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.NETCore.App.Runtime.osx-arm64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.NETCore.App.Runtime.osx-arm64/10.0.0/LICENSE.TXT",
+          "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.NETCore.App.Runtime.win-x64",
+      "version": "10.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "b0f34d51fccc69fd334253924abd8d6853fad7aa"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.NETCore.App.Runtime.win-x64/10.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Microsoft.Testing.Extensions.Telemetry",
+      "version": "1.9.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/testfx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/testfx",
+        "commit": "cb5afc3bb9bb01ebd75b57f89e8358b914ee2a49"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Testing.Extensions.TrxReport.Abstractions",
+      "version": "1.9.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/testfx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/testfx",
+        "commit": "cb5afc3bb9bb01ebd75b57f89e8358b914ee2a49"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Testing.Platform",
+      "version": "1.9.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/testfx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/testfx",
+        "commit": "cb5afc3bb9bb01ebd75b57f89e8358b914ee2a49"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Testing.Platform.MSBuild",
+      "version": "1.9.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/testfx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/testfx",
+        "commit": "cb5afc3bb9bb01ebd75b57f89e8358b914ee2a49"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.TestPlatform.ObjectModel",
+      "version": "18.10.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/vstest",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/vstest",
+        "branch": "18.10",
+        "commit": "87dfd4b2d2bacd91ad69e009ade6f4715b3b46ec"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.TestPlatform.TestHost",
+      "version": "18.10.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/microsoft/vstest",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/microsoft/vstest",
+        "branch": "18.10",
+        "commit": "87dfd4b2d2bacd91ad69e009ade6f4715b3b46ec"
+      },
+      "notices": []
+    },
+    {
+      "id": "Microsoft.Win32.Registry",
+      "version": "5.0.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://github.com/dotnet/runtime",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/dotnet/runtime",
+        "commit": "cf258a14b70ad9069470a108f13765e0e5988f51"
+      },
+      "notices": [
+        {
+          "file": "nuget/Microsoft.Win32.Registry/5.0.0/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "MimeKitLite",
+      "version": "4.18.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Jeffrey Stedfast",
+      "copyright": ".NET Foundation and Contributors",
+      "projectUrl": "https://www.mimekit.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jstedfast/MimeKit"
+      },
+      "notices": []
+    },
+    {
+      "id": "MsgReader",
+      "version": "6.2.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Kees van Spelde",
+      "copyright": "(c)2013-2026 - Kees van Spelde",
+      "projectUrl": "https://github.com/Sicos1977/MSGReader",
+      "repository": {
+        "type": "GitHub",
+        "url": "https://github.com/Sicos1977/MSGReader",
+        "commit": "598521aba573d6e914144b5d7fa99b6af490e73d"
+      },
+      "notices": []
+    },
+    {
+      "id": "NWayland",
+      "version": "0.11.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "NWayland",
+      "copyright": null,
+      "projectUrl": "https://github.com/kekekeks/NWayland",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/kekekeks/NWayland",
+        "commit": "2c37c6f84c45e2e0428221b24ff486187e8ae873"
+      },
+      "notices": []
+    },
+    {
+      "id": "OpenMcdf",
+      "version": "3.3.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MPL-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MPL-2.0",
+      "authors": "ironfede,jeremy-visionaid",
+      "copyright": "Copyright © 2010-2026, Federico Blaseotto, Jeremy Powell",
+      "projectUrl": "https://openmcdf.github.io/openmcdf/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/openmcdf/openmcdf",
+        "commit": "11b5d876cdebb472f1845dfa55e9e9b953aed65f"
+      },
+      "notices": []
+    },
+    {
+      "id": "PdfPig",
+      "version": "0.1.16",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "UglyToad",
+      "copyright": null,
+      "projectUrl": "https://github.com/UglyToad/PdfPig",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/UglyToad/PdfPig",
+        "commit": "a7bb35662bbbf405efddad50aedc9bcdcf515afc"
+      },
+      "notices": []
+    },
+    {
+      "id": "PDFsharp",
+      "version": "6.2.4",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "PDFsharp Team",
+      "copyright": "© 2026 empira",
+      "projectUrl": "https://docs.pdfsharp.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/empira/PDFsharp",
+        "branch": "master"
+      },
+      "notices": []
+    },
+    {
+      "id": "PDFtoImage",
+      "version": "5.2.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "David Sungaila",
+      "copyright": null,
+      "projectUrl": "https://github.com/sungaila/PDFtoImage",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sungaila/PDFtoImage.git",
+        "commit": "0eb81fdffb9bcd27ba34a4fa0bac63318844de1b"
+      },
+      "notices": []
+    },
+    {
+      "id": "RtfPipe",
+      "version": "2.0.7677.4303",
+      "directReferenceProjectsById": [],
+      "license": null,
+      "licenseUrl": null,
+      "authors": "Eric Domke",
+      "copyright": null,
+      "projectUrl": "https://github.com/erdomke/RtfPipe",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/erdomke/RtfPipe"
+      },
+      "notices": []
+    },
+    {
+      "id": "SharpCompress",
+      "version": "1.0.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj",
+        "src/AZOTH.Setup/AZOTH.Setup.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Adam Hathcock",
+      "copyright": "Copyright (c) 2025  Adam Hathcock",
+      "projectUrl": "https://github.com/adamhathcock/sharpcompress",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/adamhathcock/sharpcompress",
+        "branch": "refs/heads/master",
+        "commit": "b6cc95af73950c914e0c6ce7ea3511528ede1121"
+      },
+      "notices": []
+    },
+    {
+      "id": "SharpGLTF.Core",
+      "version": "1.0.7",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Vicente Penades",
+      "copyright": "Copyright (c) 2026 Vicente Penades",
+      "projectUrl": "https://github.com/vpenades/SharpGLTF",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/vpenades/SharpGLTF",
+        "commit": "acbc151e70d65ceb8bec24fa95f0067d0e5ed933"
+      },
+      "notices": []
+    },
+    {
+      "id": "SharpHook",
+      "version": "8.0.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.App/AZOTH.App.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Tolik Pylypchuk",
+      "copyright": "(c) 2021 Anatoliy Pylypchuk",
+      "projectUrl": "https://sharphook.tolik.io/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/TolikPylypchuk/SharpHook",
+        "commit": "3bb6ecb03d71af7b9d888a50a277c830a9de77c0"
+      },
+      "notices": []
+    },
+    {
+      "id": "ShimSkiaSharp",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "SkiaSharp",
+      "version": "3.119.2",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp/3.119.2/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Linux",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.Linux/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Linux.NoDependencies",
+      "version": "3.119.2",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.2/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Linux.NoDependencies",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.Linux.NoDependencies/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.macOS",
+      "version": "3.119.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.macOS/3.119.2/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.macOS",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.macOS/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.WebAssembly",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.WebAssembly/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Win32",
+      "version": "3.119.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.2",
+        "commit": "2888c737ad016d584c74525e2d35db5097ea8576"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.Win32/3.119.2/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Win32",
+      "version": "3.119.4",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://go.microsoft.com/fwlink/?linkid=868515",
+      "repository": {
+        "type": "git",
+        "url": "https://go.microsoft.com/fwlink/?linkid=868515",
+        "branch": "release/3.119.4",
+        "commit": "f568ac94dd768ef9a2f593537cfde2dd0d348ef5"
+      },
+      "notices": [
+        {
+          "file": "nuget/SkiaSharp.NativeAssets.Win32/3.119.4/LICENSE.txt",
+          "sha256": "89101e35a8c66fd4d6dffc1763259161d35cb564c169714ec227a768c89f2938"
+        }
+      ]
+    },
+    {
+      "id": "Svg.Animation",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "Svg.Custom",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MS-PL"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MS-PL",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "Svg.Model",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "Svg.SceneGraph",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "Svg.Skia",
+      "version": "5.1.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Wiesław Šoltés",
+      "copyright": "Copyright © Wiesław Šoltés 2026",
+      "projectUrl": "https://github.com/wieslawsoltes/Svg.Skia",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wieslawsoltes/Svg.Skia",
+        "commit": "3261e036769d0deba1f621265c7ab7000e3ce470"
+      },
+      "notices": []
+    },
+    {
+      "id": "System.IO.Packaging",
+      "version": "10.0.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "44525024595742ebe09023abe709df51de65009b"
+      },
+      "notices": []
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "10.0.12",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "95017c711e6afc1085133d440e42b4bd78155701"
+      },
+      "notices": []
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "10.0.13",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/dotnet",
+        "commit": "4099f83977f4d29604a9aeb971fb0a7bc1d5f699"
+      },
+      "notices": []
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "8.0.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Microsoft",
+      "copyright": "© Microsoft Corporation. All rights reserved.",
+      "projectUrl": "https://dot.net/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/dotnet/runtime",
+        "commit": "81cabf2857a01351e5ab578947c7403a5b128ad1"
+      },
+      "notices": [
+        {
+          "file": "nuget/System.Security.Cryptography.Pkcs/8.0.1/LICENSE.TXT",
+          "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+        }
+      ]
+    },
+    {
+      "id": "Tmds.DBus.Protocol",
+      "version": "0.94.1",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Tom Deseyn",
+      "copyright": "Tom Deseyn",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/tmds/Tmds.DBus.git",
+        "branch": "refs/heads/main",
+        "commit": "b4a7fed0b878f74cb54f7cca84d2889af4e596ba"
+      },
+      "notices": []
+    },
+    {
+      "id": "Tomlyn",
+      "version": "2.10.1",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "BSD-2-Clause"
+      },
+      "licenseUrl": "https://licenses.nuget.org/BSD-2-Clause",
+      "authors": "Alexandre Mutel",
+      "copyright": "Alexandre Mutel",
+      "projectUrl": "https://xoofx.github.io/Tomlyn/",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xoofx/Tomlyn",
+        "commit": "6cc82dd23a2c0aefb858f92a51c1b184e2812103"
+      },
+      "notices": []
+    },
+    {
+      "id": "Unhwp",
+      "version": "0.13.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "iyulab",
+      "copyright": "Copyright (c) iyulab",
+      "projectUrl": "https://github.com/iyulab/unhwp",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iyulab/unhwp",
+        "commit": "405b17e137b3ca06299dcbc8a156599ac7027e91"
+      },
+      "notices": []
+    },
+    {
+      "id": "UTF.Unknown",
+      "version": "2.7.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "MPL-1.1"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MPL-1.1",
+      "authors": "Julian Verdurmen, Rustam Sayfutdinov, Rudi Pettazzi, Shy Shalom",
+      "copyright": null,
+      "projectUrl": "https://github.com/CharsetDetector/UTF-unknown",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/CharsetDetector/UTF-unknown",
+        "commit": "fd4c6fab634ef3783f8b5cb88e9ae9b2cc295ad5"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.analyzers",
+      "version": "1.27.0",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson,marcind",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit.analyzers",
+        "commit": "a2260df3e96395e6b513e5c7485bd6c53806871e"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.runner.visualstudio",
+      "version": "3.1.5",
+      "directReferenceProjectsById": [
+        "tests/AZOTH.App.Tests/AZOTH.App.Tests.csproj",
+        "tests/AZOTH.Cli.Tests/AZOTH.Cli.Tests.csproj",
+        "tests/AZOTH.Core.Tests/AZOTH.Core.Tests.csproj",
+        "tests/AZOTH.Engines.Tests/AZOTH.Engines.Tests.csproj",
+        "tests/AZOTH.Platform.Tests/AZOTH.Platform.Tests.csproj",
+        "tests/AZOTH.Setup.Tests/AZOTH.Setup.Tests.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/visualstudio.xunit",
+        "commit": "1b188a7b0a069d7fc94ae3c0b251f1302b602b63"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [
+        "tests/AZOTH.App.Tests/AZOTH.App.Tests.csproj",
+        "tests/AZOTH.Cli.Tests/AZOTH.Cli.Tests.csproj",
+        "tests/AZOTH.Core.Tests/AZOTH.Core.Tests.csproj",
+        "tests/AZOTH.Engines.Tests/AZOTH.Engines.Tests.csproj",
+        "tests/AZOTH.Platform.Tests/AZOTH.Platform.Tests.csproj",
+        "tests/AZOTH.Setup.Tests/AZOTH.Setup.Tests.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.assert",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.common",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.core.mtp-v1",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.extensibility.core",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.mtp-v1",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.runner.common",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "xunit.v3.runner.inproc.console",
+      "version": "3.2.2",
+      "directReferenceProjectsById": [],
+      "license": {
+        "type": "expression",
+        "value": "Apache-2.0"
+      },
+      "licenseUrl": "https://licenses.nuget.org/Apache-2.0",
+      "authors": "jnewkirk,bradwilson",
+      "copyright": "Copyright (C) .NET Foundation",
+      "projectUrl": null,
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xunit/xunit",
+        "commit": "728c1dce012cd82193035dddfeaba184baaa88c6"
+      },
+      "notices": []
+    },
+    {
+      "id": "YamlDotNet",
+      "version": "18.1.0",
+      "directReferenceProjectsById": [
+        "src/AZOTH.Engines/AZOTH.Engines.csproj"
+      ],
+      "license": {
+        "type": "expression",
+        "value": "MIT"
+      },
+      "licenseUrl": "https://licenses.nuget.org/MIT",
+      "authors": "Antoine Aubry",
+      "copyright": "Copyright (c) Antoine Aubry and contributors",
+      "projectUrl": "https://github.com/aaubry/YamlDotNet/wiki",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/aaubry/YamlDotNet",
+        "commit": "748334a8fa7c227740018b284b71ad95cc6b7fc7"
+      },
+      "notices": []
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AZOTH.Core/AZOTH.Core.csproj" />
+    <Project Path="src/AZOTH.Engines/AZOTH.Engines.csproj" />
+    <Project Path="src/AZOTH.Platform.Windows/AZOTH.Platform.Windows.csproj" />
+    <Project Path="src/AZOTH.Platform.Linux/AZOTH.Platform.Linux.csproj" />
+    <Project Path="src/AZOTH.Platform.MacOS/AZOTH.Platform.MacOS.csproj" />
+    <Project Path="src/AZOTH.App/AZOTH.App.csproj" />
+    <Project Path="src/AZOTH.Cli/AZOTH.Cli.csproj" />
+    <Project Path="src/AZOTH.Setup/AZOTH.Setup.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AZOTH.Core.Tests/AZOTH.Core.Tests.csproj" />
+    <Project Path="tests/AZOTH.Engines.Tests/AZOTH.Engines.Tests.csproj" />
+    <Project Path="tests/AZOTH.App.Tests/AZOTH.App.Tests.csproj" />
+    <Project Path="tests/AZOTH.Cli.Tests/AZOTH.Cli.Tests.csproj" />
+    <Project Path="tests/AZOTH.Platform.Tests/AZOTH.Platform.Tests.csproj" />
+    <Project Path="tests/AZOTH.Setup.Tests/AZOTH.Setup.Tests.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path=".editorconfig" />
+  </Folder>
+</Solution>

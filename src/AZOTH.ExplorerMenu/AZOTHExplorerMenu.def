@@ -1,0 +1,5 @@
+; Exports of the Explorer context-menu COM server (see AZOTHExplorerMenu.c).
+LIBRARY AZOTHExplorerMenu
+EXPORTS
+    DllGetClassObject PRIVATE
+    DllCanUnloadNow PRIVATE

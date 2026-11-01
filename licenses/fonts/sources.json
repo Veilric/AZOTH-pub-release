@@ -1,0 +1,27 @@
+[
+  {
+    "file": "NotoSans-OFL.txt",
+    "url": "https://raw.githubusercontent.com/notofonts/latin-greek-cyrillic/main/OFL.txt",
+    "sha256": "cee9892f9f0cc8fe882c9e9537ee6a89621d86ee7ceaf70b02e2b2b1c25c061a"
+  },
+  {
+    "file": "NotoSansArabic-OFL.txt",
+    "url": "https://raw.githubusercontent.com/notofonts/arabic/main/OFL.txt",
+    "sha256": "a7a5a25eb188bf1cd96982030d53e23c33485c69b1044a562254226857ee13af"
+  },
+  {
+    "file": "NotoSansDevanagari-OFL.txt",
+    "url": "https://raw.githubusercontent.com/notofonts/devanagari/main/OFL.txt",
+    "sha256": "a216f6f8d85c7228093e0ee5e258d9d377e6671f68acb4db1930b29583d0f331"
+  },
+  {
+    "file": "NotoSansThai-OFL.txt",
+    "url": "https://raw.githubusercontent.com/notofonts/thai/main/OFL.txt",
+    "sha256": "dad6e6abc2bf3fc37cc698af7607c3f4d4235039695713b222e5a034fb5b9b1c"
+  },
+  {
+    "file": "NotoCJK-LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE",
+    "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+  }
+]

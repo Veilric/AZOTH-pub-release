@@ -1,0 +1,33 @@
+<!--
+  AZOTH.Cli: the "azoth" command line. Converts files and watches folders without the tray app, with the same
+  engines, presets and settings. Published next to AZOTH.exe as azoth-cli.exe (one runtime for both); the installer
+  puts a "azoth" shim on PATH (cli\azoth.cmd).
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>azoth-cli</AssemblyName>
+    <RootNamespace>AZOTH.Cli</RootNamespace>
+    <ApplicationIcon>..\AZOTH.App\Assets\Icons\azoth.ico</ApplicationIcon>
+    <!-- The Recycle Bin is IFileOperation, a COM interface (AZOTH.Platform.Windows). -->
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AZOTH.Core\AZOTH.Core.csproj" />
+    <ProjectReference Include="..\AZOTH.Engines\AZOTH.Engines.csproj" />
+    <!-- "Replace the original" moves originals to the Recycle Bin / Trash (MoveToTrash), as the app does. -->
+    <ProjectReference Include="..\AZOTH.Platform.Windows\AZOTH.Platform.Windows.csproj" />
+    <ProjectReference Include="..\AZOTH.Platform.Linux\AZOTH.Platform.Linux.csproj" />
+    <ProjectReference Include="..\AZOTH.Platform.MacOS\AZOTH.Platform.MacOS.csproj" />
+  </ItemGroup>
+
+  <!-- Error messages and built-in preset names, in English (the app's translation file). -->
+  <ItemGroup>
+    <EmbeddedResource Include="..\AZOTH.App\Assets\i18n\en.json" LogicalName="AZOTH.Cli.en.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="AZOTH.Cli.Tests" />
+  </ItemGroup>
+</Project>

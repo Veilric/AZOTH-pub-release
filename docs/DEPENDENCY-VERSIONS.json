@@ -1,0 +1,1158 @@
+{
+  "scope": "Resolved package versions from the clean source verification projects; includes build/test dependencies and evaluated runtime graphs. This is not a final binary-distribution inventory.",
+  "packages": [
+    {
+      "id": "ACadSharp",
+      "version": "3.8.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "AngleSharp",
+      "version": "1.8.2",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Angle.Windows.Natives",
+      "version": "2.1.27548.20260419",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.BuildServices",
+      "version": "11.3.2",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Controls.ColorPicker",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Desktop",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Fonts.Inter",
+      "version": "12.1.3",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.FreeDesktop.AtSpi",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.FreeDesktop",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.HarfBuzz",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Headless.XUnit",
+      "version": "12.1.3",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Headless",
+      "version": "12.1.3",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Native",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Remote.Protocol",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Skia",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Themes.Fluent",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Wayland",
+      "version": "12.1.3",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.Win32",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia.X11",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Avalonia",
+      "version": "12.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "AvaloniaUI.DiagnosticsSupport",
+      "version": "2.2.3",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "CommunityToolkit.Mvvm",
+      "version": "8.4.2",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "DocumentFormat.OpenXml.Framework",
+      "version": "3.5.1",
+      "projects": [
+        "tests/AZOTH.Engines.Tests"
+      ]
+    },
+    {
+      "id": "DocumentFormat.OpenXml",
+      "version": "3.5.1",
+      "projects": [
+        "tests/AZOTH.Engines.Tests"
+      ]
+    },
+    {
+      "id": "ExCSS",
+      "version": "4.3.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "ExcelDataReader",
+      "version": "3.9.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "ExcelNumberFormat",
+      "version": "1.1.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.Linux",
+      "version": "8.3.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.WebAssembly",
+      "version": "8.3.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.Win32",
+      "version": "8.3.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp.NativeAssets.macOS",
+      "version": "8.3.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "HarfBuzzSharp",
+      "version": "8.3.1.3",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Magick.NET-Q8-AnyCPU",
+      "version": "14.17.2",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Magick.NET.Core",
+      "version": "14.17.2",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Markdig",
+      "version": "1.4.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "MicroCom.Runtime",
+      "version": "0.11.6",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.ApplicationInsights",
+      "version": "2.23.0",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Bcl.AsyncInterfaces",
+      "version": "6.0.0",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.CodeCoverage",
+      "version": "18.10.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Core",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Platform.Linux",
+        "src/AZOTH.Platform.MacOS",
+        "src/AZOTH.Platform.Windows",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.DependencyInjection",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Core",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Platform.Linux",
+        "src/AZOTH.Platform.MacOS",
+        "src/AZOTH.Platform.Windows",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Logging",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Options",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Extensions.Primitives",
+      "version": "10.0.12",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.IO.RecyclableMemoryStream",
+      "version": "3.0.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Maui.Graphics",
+      "version": "10.0.110",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.NET.ILLink.Tasks",
+      "version": "10.0.0",
+      "projects": [
+        "src/AZOTH.Setup"
+      ]
+    },
+    {
+      "id": "Microsoft.NET.Test.Sdk",
+      "version": "18.10.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.TestPlatform.ObjectModel",
+      "version": "18.10.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.TestPlatform.TestHost",
+      "version": "18.10.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Testing.Extensions.Telemetry",
+      "version": "1.9.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Testing.Extensions.TrxReport.Abstractions",
+      "version": "1.9.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Testing.Platform.MSBuild",
+      "version": "1.9.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Testing.Platform",
+      "version": "1.9.1",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Microsoft.Win32.Registry",
+      "version": "5.0.0",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "MimeKitLite",
+      "version": "4.18.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "MsgReader",
+      "version": "6.2.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "NWayland",
+      "version": "0.11.0",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "OpenMcdf",
+      "version": "3.3.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "PDFsharp",
+      "version": "6.2.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "PDFtoImage",
+      "version": "5.2.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "PdfPig",
+      "version": "0.1.16",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "RtfPipe",
+      "version": "2.0.7677.4303",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SharpCompress",
+      "version": "1.0.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SharpGLTF.Core",
+      "version": "1.0.7",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SharpHook",
+      "version": "8.0.1",
+      "projects": [
+        "src/AZOTH.App",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "ShimSkiaSharp",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Linux.NoDependencies",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Linux",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.WebAssembly",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.Win32",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp.NativeAssets.macOS",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "SkiaSharp",
+      "version": "3.119.4",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Svg.Animation",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Svg.Custom",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Svg.Model",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Svg.SceneGraph",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Svg.Skia",
+      "version": "5.1.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "System.IO.Packaging",
+      "version": "10.0.2",
+      "projects": [
+        "tests/AZOTH.Engines.Tests"
+      ]
+    },
+    {
+      "id": "System.Security.Cryptography.Pkcs",
+      "version": "10.0.13",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Tmds.DBus.Protocol",
+      "version": "0.94.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Setup",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Tomlyn",
+      "version": "2.10.1",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "UTF.Unknown",
+      "version": "2.7.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "Unhwp",
+      "version": "0.13.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "YamlDotNet",
+      "version": "18.1.0",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "bblanchon.PDFium.Linux",
+      "version": "147.0.7690",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "bblanchon.PDFium.Win32",
+      "version": "147.0.7690",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "bblanchon.PDFium.macOS",
+      "version": "147.0.7690",
+      "projects": [
+        "src/AZOTH.App",
+        "src/AZOTH.Cli",
+        "src/AZOTH.Engines",
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.analyzers",
+      "version": "1.27.0",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.runner.visualstudio",
+      "version": "3.1.5",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.assert",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.common",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.core.mtp-v1",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.extensibility.core",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.mtp-v1",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.runner.common",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3.runner.inproc.console",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    },
+    {
+      "id": "xunit.v3",
+      "version": "3.2.2",
+      "projects": [
+        "tests/AZOTH.App.Tests",
+        "tests/AZOTH.Cli.Tests",
+        "tests/AZOTH.Core.Tests",
+        "tests/AZOTH.Engines.Tests",
+        "tests/AZOTH.Platform.Tests",
+        "tests/AZOTH.Setup.Tests"
+      ]
+    }
+  ]
+}

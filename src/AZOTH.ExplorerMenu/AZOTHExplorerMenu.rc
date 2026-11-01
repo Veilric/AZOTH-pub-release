@@ -1,0 +1,40 @@
+// Version information of the Explorer context-menu DLL. build/build-explorer-menu.ps1 passes the app version as
+// AZOTH_VERSION_MAJOR/MINOR/PATCH and AZOTH_VERSION_TEXT.
+
+#include <winver.h>
+
+#ifndef AZOTH_VERSION_MAJOR
+#define AZOTH_VERSION_MAJOR 0
+#define AZOTH_VERSION_MINOR 0
+#define AZOTH_VERSION_PATCH 0
+#define AZOTH_VERSION_TEXT "0.0.0"
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION AZOTH_VERSION_MAJOR, AZOTH_VERSION_MINOR, AZOTH_VERSION_PATCH, 0
+PRODUCTVERSION AZOTH_VERSION_MAJOR, AZOTH_VERSION_MINOR, AZOTH_VERSION_PATCH, 0
+FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+FILEFLAGS 0
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_DLL
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "AZOTH contributors"
+            VALUE "FileDescription", "AZOTH File Explorer context menu"
+            VALUE "FileVersion", AZOTH_VERSION_TEXT
+            VALUE "InternalName", "AZOTHExplorerMenu"
+            VALUE "LegalCopyright", "Copyright (c) AZOTH contributors. MIT License."
+            VALUE "OriginalFilename", "AZOTHExplorerMenu.dll"
+            VALUE "ProductName", "AZOTH"
+            VALUE "ProductVersion", AZOTH_VERSION_TEXT
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END

@@ -1,0 +1,126 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:vm="using:AZOTH.App.ViewModels.Pages" xmlns:services="using:AZOTH.App.Services"
+ x:Class="AZOTH.App.Views.Pages.OrdoPage" x:DataType="vm:OrdoPageViewModel">
+ <StackPanel Spacing="14">
+  <TextBlock Classes="h1" Text="{DynamicResource ordo.title}" />
+  <TextBlock Classes="muted" Text="{DynamicResource ordo.description}" TextWrapping="Wrap" />
+  <StackPanel DataContext="{Binding Workspace}" x:DataType="services:OrdoWorkspace" Spacing="14">
+   <Border Background="{DynamicResource SurfaceAltBrush}" CornerRadius="12" Padding="16">
+    <StackPanel Spacing="10">
+     <Grid ColumnDefinitions="*,Auto"><TextBlock Text="{DynamicResource ordo.source}" FontWeight="SemiBold" /><Button Grid.Column="1" Content="{DynamicResource ordo.browse}" Click="OnPickSource" IsEnabled="{Binding EditorAvailable}" /></Grid>
+     <TextBox Text="{Binding SourceRoot}" AutomationProperties.Name="{DynamicResource ordo.source}" PlaceholderText="{DynamicResource ordo.source_placeholder}" IsEnabled="{Binding EditorAvailable}" />
+     <CheckBox Content="{DynamicResource ordo.recursive}" IsChecked="{Binding Recursive}" IsEnabled="{Binding EditorAvailable}" />
+    </StackPanel>
+   </Border>
+   <TextBlock Classes="h2" Text="{DynamicResource ordo.rules}" />
+   <TextBlock Classes="caption" Text="{DynamicResource ordo.rules_hint}" TextWrapping="Wrap" />
+   <ItemsControl ItemsSource="{Binding Rules}" IsEnabled="{Binding EditorAvailable}">
+    <ItemsControl.ItemTemplate><DataTemplate x:DataType="services:OrdoRuleEditor">
+     <Border BorderBrush="{DynamicResource SubtleBorderBrush}" BorderThickness="1" CornerRadius="12" Padding="12" Margin="0,0,0,8">
+      <StackPanel Spacing="8">
+       <Grid ColumnDefinitions="140,*,Auto">
+        <StackPanel Spacing="4" Margin="0,0,8,0"><TextBlock Classes="caption" Text="{DynamicResource ordo.file_type}" /><ComboBox ItemsSource="{Binding TypeChoices}" SelectedItem="{Binding SelectedType}" AutomationProperties.Name="{DynamicResource ordo.file_type}" HorizontalAlignment="Stretch" /></StackPanel>
+        <StackPanel Grid.Column="1" Spacing="4" Margin="0,0,8,0"><TextBlock Classes="caption" Text="{DynamicResource ordo.destination}" />
+         <Grid ColumnDefinitions="*,Auto"><TextBox Text="{Binding Destination}" AutomationProperties.Name="{DynamicResource ordo.destination}" PlaceholderText="{DynamicResource ordo.destination_placeholder}" /><Button Grid.Column="1" Content="…" Click="OnPickDestination" ToolTip.Tip="{DynamicResource ordo.pick_destination}" AutomationProperties.Name="{DynamicResource ordo.pick_destination}" Margin="4,0,0,0" /></Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" Spacing="3">
+         <Button Content="↑" Command="{Binding MoveUpCommand}" Width="32" Padding="0" ToolTip.Tip="{DynamicResource ordo.move_up}" AutomationProperties.Name="{DynamicResource ordo.move_up}" />
+         <Button Content="↓" Command="{Binding MoveDownCommand}" Width="32" Padding="0" ToolTip.Tip="{DynamicResource ordo.move_down}" AutomationProperties.Name="{DynamicResource ordo.move_down}" />
+         <Button Content="×" Command="{Binding RemoveCommand}" Width="32" Padding="0" ToolTip.Tip="{DynamicResource ordo.remove_rule}" AutomationProperties.Name="{DynamicResource ordo.remove_rule}" />
+        </StackPanel>
+       </Grid>
+       <Expander Header="{DynamicResource ordo.filters}" HorizontalAlignment="Stretch">
+        <StackPanel Spacing="10" Margin="0,8,0,0">
+         <WrapPanel>
+          <StackPanel Width="160" Spacing="4" Margin="0,0,12,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.extension}" /><TextBox Text="{Binding Extension}" AutomationProperties.Name="{DynamicResource ordo.extension}" PlaceholderText="{DynamicResource ordo.extension_placeholder}" /></StackPanel>
+          <StackPanel Width="160" Spacing="4" Margin="0,0,12,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.modified_from}" /><TextBox Text="{Binding ModifiedFrom}" AutomationProperties.Name="{DynamicResource ordo.modified_from}" PlaceholderText="YYYY-MM-DD" /></StackPanel>
+          <StackPanel Width="160" Spacing="4" Margin="0,0,0,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.modified_before}" /><TextBox Text="{Binding ModifiedBefore}" AutomationProperties.Name="{DynamicResource ordo.modified_before}" PlaceholderText="YYYY-MM-DD" /></StackPanel>
+         </WrapPanel>
+         <CheckBox IsChecked="{Binding GroupByMonth}"><TextBlock Text="{DynamicResource ordo.group_month}" TextWrapping="Wrap" /></CheckBox>
+        </StackPanel>
+       </Expander>
+      </StackPanel>
+     </Border>
+    </DataTemplate></ItemsControl.ItemTemplate>
+   </ItemsControl>
+   <WrapPanel IsEnabled="{Binding EditorAvailable}"><Button Content="{DynamicResource ordo.add_rule}" Command="{Binding AddRuleCommand}" Margin="0,0,8,0" /><Button Content="{DynamicResource ordo.starters}" Command="{Binding UseStartersCommand}" /></WrapPanel>
+   <WrapPanel><Button Content="{DynamicResource ordo.preview}" Command="{Binding PreviewCommand}" IsEnabled="{Binding EditorAvailable}" Margin="0,0,8,0" /><Button Content="{DynamicResource ordo.cancel}" Command="{Binding CancelCommand}" IsEnabled="{Binding IsBusy}" /></WrapPanel>
+   <ProgressBar IsVisible="{Binding IsBusy}" IsIndeterminate="True" Height="4" />
+   <TextBlock Text="{Binding ProgressText}" IsVisible="{Binding IsBusy}" TextWrapping="Wrap" Classes="caption" />
+   <TextBlock Text="{Binding Status}" FontWeight="SemiBold" TextWrapping="Wrap" />
+   <Border x:Name="OrganizationPreview" IsVisible="{Binding HasPreview}" BorderBrush="{DynamicResource SubtleBorderBrush}" BorderThickness="1" CornerRadius="12" Padding="16">
+    <StackPanel Spacing="14">
+     <TextBlock Classes="h2" Text="{DynamicResource ordo.preview_title}" />
+     <StackPanel DataContext="{Binding PreviewDisplay}" x:DataType="services:OrdoPreview" Spacing="12">
+      <WrapPanel>
+       <StackPanel Spacing="4" MinWidth="140" Margin="0,0,20,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.preview_moving}" /><TextBlock Classes="h2" Text="{Binding MovingCount}" /></StackPanel>
+       <StackPanel Spacing="4" MinWidth="180" Margin="0,0,20,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.preview_staying}" /><TextBlock Classes="h2" Text="{Binding StayingCount}" /></StackPanel>
+       <StackPanel Spacing="4" Margin="0,0,0,8"><TextBlock Classes="caption" Text="{DynamicResource ordo.preview_data}" /><TextBlock Classes="h2" Text="{Binding TotalSize}" /></StackPanel>
+      </WrapPanel>
+      <TextBlock Classes="caption" Text="{DynamicResource ordo.preview_scope}" TextWrapping="Wrap" />
+      <TextBlock IsVisible="{Binding IsEmpty}" Text="{DynamicResource ordo.preview_empty}" TextWrapping="Wrap" />
+      <TextBlock IsVisible="{Binding HasOnlyIssues}" Text="{DynamicResource ordo.preview_no_moves}" TextWrapping="Wrap" />
+      <TextBlock IsVisible="{Binding HasMoves}" FontWeight="SemiBold" Text="{DynamicResource ordo.preview_moves}" />
+      <ListBox x:Name="PlannedMovesList" IsVisible="{Binding HasMoves}" ItemsSource="{Binding Moves}" MaxHeight="420"
+               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               AutomationProperties.Name="{DynamicResource ordo.preview_moves}" Classes="soft">
+       <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+       <ListBox.ItemsPanel><ItemsPanelTemplate><VirtualizingStackPanel /></ItemsPanelTemplate></ListBox.ItemsPanel>
+       <ListBox.ItemTemplate><DataTemplate x:DataType="services:OrdoPreviewMove">
+        <StackPanel Spacing="8" Margin="0,4,0,10">
+         <Border IsVisible="{Binding StartsGroup}" Background="{DynamicResource SurfaceAltBrush}" CornerRadius="6" Padding="10,8">
+          <StackPanel Spacing="3"><TextBlock Text="{Binding MatchedRule}" FontWeight="SemiBold" /><SelectableTextBlock Text="{Binding GroupDestination}" FlowDirection="LeftToRight" TextWrapping="Wrap" /></StackPanel>
+         </Border>
+         <Grid ColumnDefinitions="*,Auto"><TextBlock Text="{Binding FileName}" FontWeight="SemiBold" TextWrapping="Wrap" /><TextBlock Grid.Column="1" Text="{Binding SizeText}" Margin="12,0,0,0" AutomationProperties.Name="{DynamicResource ordo.preview_size}" /></Grid>
+         <StackPanel Spacing="3">
+          <TextBlock Classes="caption" Text="{DynamicResource ordo.preview_from}" /><SelectableTextBlock Text="{Binding SourcePath}" FlowDirection="LeftToRight" TextWrapping="Wrap" />
+          <TextBlock Classes="caption" Text="{DynamicResource ordo.preview_to}" /><SelectableTextBlock Text="{Binding DestinationPath}" FlowDirection="LeftToRight" TextWrapping="Wrap" />
+          <TextBlock Classes="caption" Text="{Binding MatchedRule}" AutomationProperties.Name="{DynamicResource ordo.preview_matched_rule}" />
+         </StackPanel>
+        </StackPanel>
+       </DataTemplate></ListBox.ItemTemplate>
+      </ListBox>
+      <TextBlock IsVisible="{Binding HasIssues}" FontWeight="SemiBold" Text="{DynamicResource ordo.preview_issues}" />
+      <TextBlock IsVisible="{Binding !HasIssues}" Classes="caption" Text="{DynamicResource ordo.preview_no_issues}" />
+      <ListBox x:Name="PreviewIssuesList" IsVisible="{Binding HasIssues}" ItemsSource="{Binding Issues}" MaxHeight="260"
+               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+               AutomationProperties.Name="{DynamicResource ordo.preview_issues}" Classes="soft">
+       <ListBox.Styles><Style Selector="ListBoxItem"><Setter Property="HorizontalContentAlignment" Value="Stretch" /></Style></ListBox.Styles>
+       <ListBox.ItemsPanel><ItemsPanelTemplate><VirtualizingStackPanel /></ItemsPanelTemplate></ListBox.ItemsPanel>
+       <ListBox.ItemTemplate><DataTemplate x:DataType="services:OrdoPreviewIssue">
+        <StackPanel Spacing="4" Margin="0,4,0,10"><TextBlock Text="{Binding Status}" FontWeight="SemiBold" />
+         <SelectableTextBlock Text="{Binding Path}" FlowDirection="LeftToRight" TextWrapping="Wrap" /><TextBlock Text="{Binding Explanation}" TextWrapping="Wrap" />
+        </StackPanel>
+       </DataTemplate></ListBox.ItemTemplate>
+      </ListBox>
+     </StackPanel>
+     <Button Background="{DynamicResource AccentStrongBrush}" Foreground="{DynamicResource OnAccentBrush}"
+             Command="{Binding ApplyCommand}" IsEnabled="{Binding CanApply}" AutomationProperties.Name="{DynamicResource ordo.apply}">
+      <Button.Styles>
+       <Style Selector="Button:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource AccentStrongBrush}" />
+       </Style>
+      </Button.Styles>
+      <TextBlock Text="{DynamicResource ordo.apply}" Foreground="{DynamicResource OnAccentBrush}" />
+     </Button>
+    </StackPanel>
+   </Border>
+   <Border Background="{DynamicResource SurfaceAltBrush}" CornerRadius="12" Padding="16"><StackPanel Spacing="10">
+    <TextBlock Text="{DynamicResource ordo.monitoring}" FontWeight="SemiBold" /><TextBlock Text="{Binding MonitorStatus}" TextWrapping="Wrap" />
+    <TextBlock Classes="caption" Text="{DynamicResource ordo.monitor_hint}" TextWrapping="Wrap" />
+    <StackPanel IsEnabled="{Binding !IsBusy}" Spacing="10">
+     <CheckBox IsChecked="{Binding ReviewMonitoring}" IsEnabled="{Binding HasPreview}"><TextBlock Text="{DynamicResource ordo.approve_monitoring}" TextWrapping="Wrap" /></CheckBox>
+     <WrapPanel><Button Content="{DynamicResource ordo.enroll}" Command="{Binding EnrollCommand}" IsEnabled="{Binding CanEnroll}" Margin="0,0,8,0" /><Button Content="{DynamicResource ordo.pause}" Command="{Binding PauseCommand}" IsEnabled="{Binding MonitoringEnabled}" /></WrapPanel>
+    </StackPanel>
+    <CheckBox Content="{DynamicResource ordo.startup}" IsChecked="{Binding StartWithSystem}" IsEnabled="{Binding StartupAvailable}" /><TextBlock Classes="caption" Text="{Binding StartupExplanation}" TextWrapping="Wrap" />
+   </StackPanel></Border>
+   <Grid ColumnDefinitions="*,Auto"><TextBlock Text="{DynamicResource ordo.history}" Classes="h2" /><Button Grid.Column="1" Content="{DynamicResource ordo.refresh_history}" Command="{Binding RefreshHistoryCommand}" /></Grid>
+   <ItemsControl ItemsSource="{Binding History}"><ItemsControl.ItemTemplate><DataTemplate x:DataType="services:OrdoHistoryRow">
+    <Border BorderBrush="{DynamicResource SubtleBorderBrush}" BorderThickness="1" CornerRadius="12" Padding="14" Margin="0,0,0,10"><StackPanel Spacing="8">
+     <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextWrapping="Wrap" /><SelectableTextBlock Text="{Binding Outcomes}" TextWrapping="Wrap" />
+     <WrapPanel><Button Content="{DynamicResource ordo.reconcile}" Command="{Binding ReconcileCommand}" Margin="0,0,8,0" /><Button Content="{DynamicResource ordo.undo}" Command="{Binding UndoCommand}" /></WrapPanel>
+    </StackPanel></Border>
+   </DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+  </StackPanel>
+ </StackPanel>
+</UserControl>

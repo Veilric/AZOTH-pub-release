@@ -1,0 +1,50 @@
+[
+  {
+    "file": "pypandoc-hwpx.LICENSE",
+    "url": "https://raw.githubusercontent.com/msjang/pypandoc-hwpx/main/LICENSE",
+    "retrieved": "2026-11-01",
+    "sha256": "b61995ebd3ad9ab25f7a546fddd55f735b30297171587829510a0b399045c423"
+  },
+  {
+    "file": "Svg.Skia.LICENSE",
+    "url": "https://raw.githubusercontent.com/wieslawsoltes/Svg.Skia/3261e036769d0deba1f621265c7ab7000e3ce470/LICENSE.TXT",
+    "retrieved": "2026-11-01",
+    "sha256": "31fdac60ff94d9cab3afef9794905df38c47e82b6879819c025d703d3aebd953"
+  },
+  {
+    "file": "fontTools.LICENSE",
+    "url": "https://raw.githubusercontent.com/fonttools/fonttools/main/LICENSE",
+    "retrieved": "2026-11-01",
+    "sha256": "6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383"
+  },
+  {
+    "file": "RtfPipe.LICENSE",
+    "url": "https://raw.githubusercontent.com/erdomke/RtfPipe/master/LICENSE",
+    "retrieved": "2026-11-01",
+    "sha256": "5dfbb3096a1887fdc75be19f9215f79863379a16dfb1aae04d482789258cdcbc"
+  },
+  {
+    "file": "libuiohook.COPYING.LESSER.md",
+    "url": "https://raw.githubusercontent.com/TolikPylypchuk/libuiohook/master/COPYING.LESSER.md",
+    "retrieved": "2026-11-01",
+    "sha256": "7ad7cd468312ef58e478eac02729063dd07ab2320c35adc08c2ad00f840b9237"
+  },
+  {
+    "file": "MS-PL.txt",
+    "url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MS-PL.txt",
+    "retrieved": "2026-11-01",
+    "sha256": "7a162b1da10f1c22db4c68f07bec4a8355259f8d4aab5b00a2b2bbd423d833dd"
+  },
+  {
+    "file": "MPL-2.0.txt",
+    "url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MPL-2.0.txt",
+    "retrieved": "2026-11-01",
+    "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+  },
+  {
+    "file": "MPL-1.1.txt",
+    "url": "https://raw.githubusercontent.com/spdx/license-list-data/main/text/MPL-1.1.txt",
+    "retrieved": "2026-11-01",
+    "sha256": "6214f8b1300bb9f37b16ebc146f8f61af0187e0025042ff95c8b3030744a8795"
+  }
+]

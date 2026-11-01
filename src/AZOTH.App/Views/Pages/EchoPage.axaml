@@ -1,0 +1,85 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:AZOTH.App.ViewModels.Pages"
+             x:Class="AZOTH.App.Views.Pages.EchoPage" x:DataType="vm:EchoPageViewModel">
+  <StackPanel Spacing="14">
+    <TextBlock Classes="h1" Text="{DynamicResource echo.title}" />
+    <TextBlock Classes="muted" Text="{DynamicResource echo.intro}" TextWrapping="Wrap" />
+    <Border Background="{DynamicResource SurfaceAltBrush}" CornerRadius="12" Padding="16">
+      <StackPanel Spacing="10">
+        <Grid ColumnDefinitions="*,Auto">
+          <TextBlock Text="{DynamicResource echo.roots}" FontWeight="SemiBold" VerticalAlignment="Center" />
+          <Button Grid.Column="1" Content="{DynamicResource echo.pick}" Click="OnPickFolders" IsEnabled="{Binding !IsBusy}" />
+        </Grid>
+        <TextBox x:Name="RootsEditor" Text="{Binding RootsText}" AcceptsReturn="True" MinHeight="72" MaxHeight="140"
+                 TextWrapping="Wrap" IsEnabled="{Binding !IsBusy}" AutomationProperties.Name="{DynamicResource echo.roots}" />
+        <TextBlock Classes="caption" Text="{DynamicResource echo.roots_hint}" TextWrapping="Wrap" />
+        <WrapPanel>
+          <CheckBox Content="{DynamicResource echo.recursive}" IsChecked="{Binding Recursive}" IsEnabled="{Binding !IsBusy}" Margin="0,0,18,0" />
+          <Button Content="{DynamicResource echo.scan}" Command="{Binding ScanCommand}" IsEnabled="{Binding !IsBusy}" Margin="0,0,8,0" />
+          <Button Content="{DynamicResource echo.cancel}" Command="{Binding CancelCommand}" IsEnabled="{Binding IsBusy}" />
+        </WrapPanel>
+        <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsBusy}" Height="4" />
+        <TextBlock Text="{Binding ProgressText}" Classes="caption" TextWrapping="Wrap" />
+      </StackPanel>
+    </Border>
+    <TextBlock Text="{Binding Status}" TextWrapping="Wrap" FontWeight="SemiBold" />
+    <TextBlock Text="{Binding Estimate}" TextWrapping="Wrap" />
+    <TextBlock Classes="caption" Text="{DynamicResource echo.storage_note}" TextWrapping="Wrap" />
+    <ItemsControl ItemsSource="{Binding OutcomeMessages}">
+      <ItemsControl.ItemTemplate><DataTemplate x:DataType="x:String"><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" /></DataTemplate></ItemsControl.ItemTemplate>
+    </ItemsControl>
+    <Expander Header="{DynamicResource echo.issues}">
+      <ItemsControl ItemsSource="{Binding Issues}">
+        <ItemsControl.ItemTemplate><DataTemplate x:DataType="x:String"><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,4" /></DataTemplate></ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </Expander>
+    <Border Background="{DynamicResource SurfaceAltBrush}" CornerRadius="12" Padding="14">
+      <StackPanel Spacing="8">
+        <TextBlock Text="{Binding SelectionSummary}" FontWeight="SemiBold" TextWrapping="Wrap" />
+        <TextBlock Text="{DynamicResource echo.survivor_note}" Classes="caption" TextWrapping="Wrap" />
+        <Button Content="{DynamicResource echo.review}" Command="{Binding ReviewCommand}" IsEnabled="{Binding CanReview}" />
+        <StackPanel IsVisible="{Binding IsReviewed}" Spacing="8">
+          <TextBlock Text="{DynamicResource echo.confirm_note}" TextWrapping="Wrap" FontWeight="SemiBold" />
+          <ItemsControl ItemsSource="{Binding ReviewPaths}">
+            <ItemsControl.ItemTemplate><DataTemplate x:DataType="x:String"><TextBlock Text="{Binding}" TextWrapping="Wrap" Margin="0,3" /></DataTemplate></ItemsControl.ItemTemplate>
+          </ItemsControl>
+          <WrapPanel>
+            <Button Classes="accent" Content="{DynamicResource echo.confirm}" Command="{Binding ConfirmCommand}" IsEnabled="{Binding CanConfirm}" Margin="0,0,8,0" />
+            <Button Content="{DynamicResource echo.back}" Command="{Binding DismissReviewCommand}" />
+          </WrapPanel>
+        </StackPanel>
+      </StackPanel>
+    </Border>
+    <ItemsControl ItemsSource="{Binding Groups}" IsEnabled="{Binding !IsBusy}">
+      <ItemsControl.ItemTemplate>
+        <DataTemplate x:DataType="vm:EchoGroupRow">
+          <Border BorderBrush="{DynamicResource SubtleBorderBrush}" BorderThickness="1" CornerRadius="12" Padding="14" Margin="0,0,0,12">
+            <StackPanel Spacing="8">
+              <TextBlock Text="{Binding Details}" FontWeight="SemiBold" />
+              <TextBlock Text="{Binding Hash}" Classes="caption" TextWrapping="Wrap" />
+              <ItemsControl ItemsSource="{Binding Files}">
+                <ItemsControl.ItemTemplate>
+                  <DataTemplate x:DataType="vm:EchoFileRow">
+                    <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,8">
+                      <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected}" IsEnabled="{Binding CanSelect}" VerticalAlignment="Top" Margin="0,0,10,0"
+                                AutomationProperties.Name="{Binding Path}" />
+                      <StackPanel Grid.Column="1" Spacing="3">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Path}" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Details}" Classes="caption" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Exclusion}" IsVisible="{Binding HasExclusion}" Classes="caption" TextWrapping="Wrap" />
+                        <TextBlock Text="{Binding Aliases}" IsVisible="{Binding HasAliases}" Classes="caption" TextWrapping="Wrap" />
+                      </StackPanel>
+                      <Button Grid.Column="2" Content="{DynamicResource echo.open_folder}" Command="{Binding RevealCommand}" VerticalAlignment="Top" Margin="10,0,0,0" />
+                    </Grid>
+                  </DataTemplate>
+                </ItemsControl.ItemTemplate>
+              </ItemsControl>
+            </StackPanel>
+          </Border>
+        </DataTemplate>
+      </ItemsControl.ItemTemplate>
+    </ItemsControl>
+  </StackPanel>
+</UserControl>
