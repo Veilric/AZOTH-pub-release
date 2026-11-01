@@ -224,7 +224,8 @@ public class EchoWorkspaceTests
     }
 
     [AvaloniaTheory]
-    [InlineData(false)] [InlineData(true)]
+    [InlineData(false)]
+    [InlineData(true)]
     public async Task Refusal_and_indeterminate_outcomes_remain_visible_after_reconciliation(bool throws)
     {
         using var f = new Fixture((_, _) => throws ? throw new IOException("provider uncertain") : Task.FromResult(new TrashResult(false, "provider refused")));
@@ -265,7 +266,8 @@ public class EchoWorkspaceTests
     }
 
     [AvaloniaTheory]
-    [InlineData(false)] [InlineData(true)]
+    [InlineData(false)]
+    [InlineData(true)]
     public void Actual_donut_launch_ignores_empty_and_directory_context_without_scanning(bool empty)
     {
         TestServices.EnsureInitialized();
@@ -371,7 +373,8 @@ public class EchoWorkspaceTests
     }
 
     [AvaloniaTheory]
-    [InlineData(ThemeMode.Light)] [InlineData(ThemeMode.Dark)]
+    [InlineData(ThemeMode.Light)]
+    [InlineData(ThemeMode.Dark)]
     public async Task Real_echo_workspace_renders_scan_and_exact_review_in_both_themes(ThemeMode mode)
     {
         using var f = new Fixture();
@@ -423,7 +426,8 @@ public class EchoWorkspaceTests
     }
 
     [AvaloniaTheory]
-    [InlineData("tool-echo", "echo")] [InlineData("tool-ordo", "ordo")]
+    [InlineData("tool-echo", "echo")]
+    [InlineData("tool-ordo", "ordo")]
     public void Workspace_actions_survive_current_catalog_restart_and_private_snapshot_IDs(string id, string destination)
     {
         TestServices.EnsureInitialized(); var root = Directory.CreateTempSubdirectory("azoth-launch-").FullName;

@@ -17,8 +17,11 @@ public sealed class FileFingerprintService(IFileMetadata metadata)
         {
             await using var stream = new FileStream(before.Snapshot!.Path, new FileStreamOptions
             {
-                Mode = FileMode.Open, Access = FileAccess.Read, Share = FileShare.Read,
-                BufferSize = 65536, Options = FileOptions.Asynchronous | FileOptions.SequentialScan
+                Mode = FileMode.Open,
+                Access = FileAccess.Read,
+                Share = FileShare.Read,
+                BufferSize = 65536,
+                Options = FileOptions.Asynchronous | FileOptions.SequentialScan
             });
             var hash = await SHA256.HashDataAsync(stream, cancellationToken).ConfigureAwait(false);
             var after = metadata.Read(path);

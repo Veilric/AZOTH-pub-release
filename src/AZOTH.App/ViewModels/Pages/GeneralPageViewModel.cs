@@ -1,8 +1,8 @@
 // General settings: language, start-up, Explorer integration, preset library import/export. Updates are on the About page.
 
 using AZOTH.App.Services;
-using AZOTH.Core.Localization;
 using AZOTH.Core.Donuts;
+using AZOTH.Core.Localization;
 using AZOTH.Core.Platform;
 using AZOTH.Core.Presets;
 using AZOTH.Core.Settings;

@@ -380,7 +380,17 @@ public sealed class OrdoTests : IDisposable
     [Fact]
     public async Task Monitor_keeps_case_distinct_new_files_on_case_sensitive_systems()
     {
-        if (OperatingSystem.IsWindows()) return;
+        var probe = Write("case-sensitivity-probe");
+        bool caseSensitive;
+        try
+        {
+            caseSensitive = !File.Exists(Path.Combine(Source, "CASE-SENSITIVITY-PROBE"));
+        }
+        finally
+        {
+            File.Delete(probe);
+        }
+        Assert.SkipUnless(caseSensitive, "The temporary source directory is case-insensitive.");
         var baseline = Write("old.txt");
         await using var monitor = new OrdoMonitor(_metadata, Planner, Service(), Journal,
             Path.Combine(_root, "monitor.json"), new(), TimeSpan.Zero);

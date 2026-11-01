@@ -23,7 +23,7 @@ public class BrandFinalizationTests
     }
 
     [Fact]
-    public void Readmes_describe_the_available_workspaces_and_preserve_upstream_credit()
+    public void Readmes_describe_the_available_workspaces_and_legal_notices_preserve_upstream_credit()
     {
         foreach (var path in Directory.EnumerateFiles(Root, "README*.md"))
         {
@@ -31,8 +31,10 @@ public class BrandFinalizationTests
             Assert.Contains("by Veilric", text);
             Assert.DoesNotContain("planned for later stages", text);
             Assert.Contains("ECHO", text); Assert.Contains("ORDO", text);
-            Assert.Contains("https://github.com/KnifeLemon/Filee", text);
         }
+        var notice = File.ReadAllText(Path.Combine(Root, "NOTICE.md"));
+        Assert.Contains("https://github.com/KnifeLemon/Filee", notice);
+        Assert.Contains("Myeonggu Kim (KnifeLemon)", notice);
         Assert.Contains("Permission is hereby granted", File.ReadAllText(Path.Combine(Root, "LICENSE")));
     }
 

@@ -108,8 +108,13 @@ public class DonutWorkspaceTests
     {
         using var dir = new TempDir();
         var store = new UserDataStore(dir.Path); store.Load();
-        store.Presets.Add(new Preset { Id = "my-group", Kind = PresetKind.Group,
-            TargetFormat = Preset.GroupTarget, SubPresetIds = ["to-jpg"] });
+        store.Presets.Add(new Preset
+        {
+            Id = "my-group",
+            Kind = PresetKind.Group,
+            TargetFormat = Preset.GroupTarget,
+            SubPresetIds = ["to-jpg"]
+        });
         using var workspace = new DonutWorkspace(store);
         var group = workspace.AddAction("my-group");
         var child = workspace.Draft.Presets.Single(p => !p.IsGroup).Id;

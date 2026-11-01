@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 namespace AZOTH.Core.Ordo;
+
 internal sealed record OrdoConfigurationData(string SourceRoot, bool Recursive, IReadOnlyList<OrdoRule> Rules);
 [JsonSourceGenerationOptions(WriteIndented = true, UseStringEnumConverter = true)]
 [JsonSerializable(typeof(OrdoMonitorState))]

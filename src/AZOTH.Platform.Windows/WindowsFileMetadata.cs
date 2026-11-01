@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
-using Microsoft.Win32.SafeHandles;
 using AZOTH.Core.Files;
+using Microsoft.Win32.SafeHandles;
 
 namespace AZOTH.Platform.Windows;
 
@@ -43,11 +43,14 @@ public sealed class WindowsFileMetadata : SafeFileMetadata
             _ => FileRefusalKind.IoError
         }, $"Windows metadata query failed ({error}): {path}"));
     }
-    [StructLayout(LayoutKind.Explicit, Size = 24)] private struct IdInfo
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
+    private struct IdInfo
     { [FieldOffset(0)] public ulong Volume; [FieldOffset(8)] public ulong IdLow; [FieldOffset(16)] public ulong IdHigh; }
-    [StructLayout(LayoutKind.Explicit, Size = 24)] private struct StandardInfo
+    [StructLayout(LayoutKind.Explicit, Size = 24)]
+    private struct StandardInfo
     { [FieldOffset(8)] public long Length; [FieldOffset(16)] public uint Links; [FieldOffset(20)] public byte DeletePending; [FieldOffset(21)] public byte Directory; }
-    [StructLayout(LayoutKind.Explicit, Size = 40)] private struct BasicInfo
+    [StructLayout(LayoutKind.Explicit, Size = 40)]
+    private struct BasicInfo
     { [FieldOffset(16)] public long LastWrite; [FieldOffset(24)] public long Change; [FieldOffset(32)] public uint Attributes; }
     [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
     private static extern SafeFileHandle CreateFileW(string name, uint access, uint share, nint security, uint creation, uint flags, nint template);

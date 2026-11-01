@@ -30,7 +30,8 @@ public sealed partial class EchoWorkspace : ObservableObject, IDisposable
             var refusal = platform.MoveToTrash(path);
             return refusal is null ? TrashResult.Success
                 : new TrashResult(false, loc[refusal.ReasonKey] + (refusal.Detail is null ? "" : ": " + refusal.Detail));
-        }), platform.RevealInFileManager, loc) { }
+        }), platform.RevealInFileManager, loc)
+    { }
 
     public EchoWorkspace(EchoService service, EchoTrash trash, Action<string> reveal, ILocalizer loc)
         => (_service, _trash, _reveal, _loc) = (service, trash, reveal, loc);

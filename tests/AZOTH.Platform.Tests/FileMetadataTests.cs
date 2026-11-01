@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
-using AZOTH.Core.Files;
 using AZOTH.Core.Echo;
+using AZOTH.Core.Files;
 using AZOTH.Platform.Linux;
 using AZOTH.Platform.MacOS;
 using AZOTH.Platform.Windows;

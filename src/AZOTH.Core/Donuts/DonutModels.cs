@@ -14,7 +14,9 @@ public sealed class DonutSnapshot
     public string? SavedPresetId { get; set; }
     public DonutSnapshot Clone() => new()
     {
-        Profile = Profile.Clone(), Presets = Presets.Select(p => p.Clone()).ToList(), SavedPresetId = SavedPresetId
+        Profile = Profile.Clone(),
+        Presets = Presets.Select(p => p.Clone()).ToList(),
+        SavedPresetId = SavedPresetId
     };
 }
 
