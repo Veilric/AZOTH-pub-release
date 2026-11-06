@@ -23,7 +23,7 @@ public sealed class OrdoWorkspaceTests
 {
     private sealed class Fixture : IAsyncDisposable
     {
-        public string Root { get; } = Directory.CreateTempSubdirectory("azoth-ordo-ui-").FullName;
+        public string Root { get; } = NativeFileTestPaths.CreateTempDirectory("azoth-ordo-ui-");
         public string Source => Path.Combine(Root, "inbox");
         public OrdoWorkspace Workspace { get; private set; } = null!;
         public OrdoMonitor Monitor { get; private set; } = null!;

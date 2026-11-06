@@ -25,6 +25,7 @@ using AZOTH.Core.Presets;
 using AZOTH.Core.Profiles;
 using AZOTH.Core.Settings;
 using AZOTH.Engines.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
@@ -627,6 +628,7 @@ public class PresetAvailabilityTests
         public readonly FakeTransformer Turner = new("pandoc", [new("png", "png", Cost: 1)]) { Available = false };
         public readonly ConverterCatalog Catalog;
         public readonly PresetAvailability Availability;
+        public readonly WindowService Windows;
         public readonly ILocalizer Loc;
         public readonly List<EnginePackageState> Packages;
 
@@ -637,6 +639,8 @@ public class PresetAvailabilityTests
             _presets = _store.Presets.ToList();
             _profiles = _store.Profiles.Select(p => p.Clone()).ToList();
             Loc = AppHost.Get<ILocalizer>();
+            // The application lives for the assembly; editor owners belong to this fixture.
+            Windows = ActivatorUtilities.CreateInstance<WindowService>(AppHost.Services);
             var converters = new List<IConverter> { Built, Gated, Motion, Turner };
             if (extra is not null)
                 converters.Add(extra);
@@ -662,7 +666,7 @@ public class PresetAvailabilityTests
         public ToolbarPageViewModel Page(ToolbarProfile profile, ILogger<ToolbarPageViewModel>? log = null)
         {
             _store.Profiles.Add(profile);
-            var vm = new ToolbarPageViewModel(_store, Loc, AppHost.Get<WindowService>(), Availability, Catalog,
+            var vm = new ToolbarPageViewModel(_store, Loc, Windows, Availability, Catalog,
                 log ?? NullLogger<ToolbarPageViewModel>.Instance);
             vm.SelectedProfile = vm.Profiles.Single(p => ReferenceEquals(p.Profile, profile));
             return vm;
@@ -961,7 +965,7 @@ public class PresetAvailabilityTests
         Dispatcher.UIThread.RunJobs();
         Assert.Equal("test-jpg", vm.SelectedProfile!.Profile.PresetIds[^1]);
 
-        var windows = OpenMain();
+        var windows = OpenMain(f.Windows);
         try
         {
             // Opening the main window made it the active one; the keys go to the page's window again.
@@ -1004,7 +1008,7 @@ public class PresetAvailabilityTests
         using var vm = f.PageWithPalette("png", "mp4");
         Dispatcher.UIThread.RunJobs();
         Assert.True(vm.Palette.Single(c => c.PresetId == "test-mp4").IsDimmed);
-        var windows = OpenMain();
+        var windows = OpenMain(f.Windows);
         try
         {
             var editing = vm.EditChipAsync("test-mp4");
@@ -1023,7 +1027,7 @@ public class PresetAvailabilityTests
         using var vm = f.PageWithPalette("png", "mp4");
         Dispatcher.UIThread.RunJobs();
         Assert.True(vm.Insert("test-mp4", 0));
-        var windows = OpenMain();
+        var windows = OpenMain(f.Windows);
         try
         {
             var editing = vm.EditAsync(0);
@@ -1037,9 +1041,8 @@ public class PresetAvailabilityTests
     }
 
     // The editor needs a visible owner. Closing from code only hides the main window and posts the real close.
-    private static WindowService OpenMain()
+    private static WindowService OpenMain(WindowService windows)
     {
-        var windows = AppHost.Get<WindowService>();
         Assert.Null(windows.Main);
         windows.ShowMain();
         return windows;
@@ -1720,7 +1723,7 @@ public class ToolbarPaletteModelTests
         Assert.False(vm.HasJudgement(b.Id, "test-late"));
 
         // The page opened again: a new view model on the same library judges each profile afresh, once.
-        using var reopened = new ToolbarPageViewModel(f.Store, f.Loc, AppHost.Get<WindowService>(), f.Availability, f.Catalog,
+        using var reopened = new ToolbarPageViewModel(f.Store, f.Loc, f.Windows, f.Availability, f.Catalog,
             NullLogger<ToolbarPageViewModel>.Instance);
         var observed = new List<(string, string)>();
         reopened.JudgementObserved = (id, preset) => observed.Add((id, preset));
@@ -1746,7 +1749,7 @@ public class ToolbarPaletteModelTests
         using var vm = f.Page(original);
         Dispatcher.UIThread.RunJobs();
         Assert.True(vm.HasJudgement(original.Id, "test-jpg"));
-        var windows = AppHost.Get<WindowService>();
+        var windows = f.Windows;
         Assert.Null(windows.Main);
         windows.ShowMain();
         try

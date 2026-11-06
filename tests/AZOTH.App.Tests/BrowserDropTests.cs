@@ -315,10 +315,11 @@ public class BrowserDropTests
         TestServices.EnsureInitialized(language);
         var store = AppHost.Get<UserDataStore>();
         var loc = AppHost.Get<AZOTH.Core.Localization.ILocalizer>();
-        var vm = new MainWindowViewModel(AppHost.Services, loc, AppHost.Get<UpdateService>());
+        using var vm = new MainWindowViewModel(AppHost.Services, loc, AppHost.Get<UpdateService>());
         vm.Navigate("general");
         var window = new MainWindow { DataContext = vm, Width = 1080, Height = 820 };
         window.Show();
+        window.FindControl<StartupLogo>("LaunchLogo")!.RevealAt(1.4);
         Pump();
         try
         {

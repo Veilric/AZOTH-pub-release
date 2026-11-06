@@ -71,7 +71,12 @@ public class DonutBuilderTests
             Assert.False(radial.IsVisible);
             Assert.Equal("DonutBuilderPageViewModel", ((MainWindowViewModel)windows.Main.DataContext!).CurrentPage.GetType().Name);
         }
-        finally { windows.Main?.Close(); }
+        finally
+        {
+            windows.Main?.Close();
+            Avalonia.Threading.Dispatcher.UIThread.RunJobs();
+            Assert.Null(windows.Main);
+        }
     }
 }
 

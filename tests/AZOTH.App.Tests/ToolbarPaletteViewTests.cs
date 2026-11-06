@@ -126,9 +126,8 @@ public class ToolbarPaletteViewTests
     private static void DoubleTap(Border chip) => chip.RaiseEvent(new TappedEventArgs(InputElement.DoubleTappedEvent, null!));
 
     // The editors need a visible owner (see PresetAvailabilityTests).
-    private static WindowService OpenMain()
+    private static WindowService OpenMain(WindowService windows)
     {
-        var windows = AppHost.Get<WindowService>();
         Assert.Null(windows.Main);
         windows.ShowMain();
         return windows;
@@ -548,7 +547,7 @@ public class ToolbarPaletteViewTests
         Assert.Empty(Slices());
 
         // A right-click still opens its editor.
-        var windows = OpenMain();
+        var windows = OpenMain(f.Windows);
         try
         {
             view.Click(unusable, MouseButton.Right);
@@ -602,7 +601,7 @@ public class ToolbarPaletteViewTests
         Assert.Equal(PaletteTab.Image, view.Selected);
         Assert.Equal([.. groups, group.Id], view.Chips.Take(groups.Count + 1));
 
-        var windows = OpenMain();
+        var windows = OpenMain(f.Windows);
         try
         {
             // A free slot: the new preset goes on the donut, and the tab stays.

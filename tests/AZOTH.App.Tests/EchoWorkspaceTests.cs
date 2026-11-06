@@ -20,7 +20,7 @@ public class EchoWorkspaceTests
 
     private sealed class Fixture : IDisposable
     {
-        private string OwnedRoot { get; } = Directory.CreateTempSubdirectory("azoth-echo-ui-").FullName;
+        private string OwnedRoot { get; } = NativeFileTestPaths.CreateTempDirectory("azoth-echo-ui-");
         public string Root => Path.Combine(OwnedRoot, "scan");
         public EchoPageViewModel Model { get; }
         public EchoWorkspace Workspace { get; }

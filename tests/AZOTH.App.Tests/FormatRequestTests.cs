@@ -124,6 +124,9 @@ public sealed class FormatRequestTests : IDisposable
         finally
         {
             windows.FormatRequestNotice?.Close();
+            // An unconfigured donut opens the builder; close it and finish its posted release.
+            windows.Main?.Close();
+            Pump();
         }
     }
 }
