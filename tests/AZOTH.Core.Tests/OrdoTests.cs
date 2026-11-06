@@ -24,7 +24,7 @@ public sealed class OrdoTests : IDisposable
         var config = Config(new OrdoRule("first", "sorted", OrdoFileType.Image, "jpg", new(2025, 1, 1, 0, 0, 0, TimeSpan.Zero), new(2026, 1, 1, 0, 0, 0, TimeSpan.Zero), true), new("second", "elsewhere", OrdoFileType.Image), new("text", "docs", Extension: ".txt"));
         var plan = await Planner.PreviewAsync(config);
         Assert.Equal(2, plan.Moves.Count);
-        Assert.Equal(Path.Combine(Source, "sorted/2025-03/a.JPG"), plan.Moves[0].Destination);
+        Assert.Equal(Path.Combine(Source, "sorted", "2025-03", "a.JPG"), plan.Moves[0].Destination);
         Assert.Equal("first", plan.Moves[0].RuleId);
         Assert.Equal("text", plan.Moves[1].RuleId);
     }

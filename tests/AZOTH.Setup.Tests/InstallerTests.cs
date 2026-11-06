@@ -33,7 +33,7 @@ public class InstallerTests
         string? Value(string name) => registry.Get(Hive.LocalMachine, Key, name)?.Text;
         Assert.Equal("AZOTH", Value("DisplayName"));
         Assert.Equal("2.0.0", Value("DisplayVersion"));
-        Assert.Equal("AZOTH contributors", Value("Publisher"));
+        Assert.Equal("Veilric", Value("Publisher"));
         Assert.Equal(Path.Combine(folder, "AZOTH.exe"), Value("DisplayIcon"));
         Assert.Equal(folder + "\\", Value("InstallLocation"));
         Assert.Equal($"\"{folder}\\uninstall.exe\"", Value("UninstallString"));
